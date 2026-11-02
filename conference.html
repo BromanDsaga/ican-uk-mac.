@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ICAN UK Conference 2026 — Navigating the Future of Global Finance</title>
+  <meta name="description"
+    content="ICAN UK & District Society 2026 Conference — 18–19 November, London. 12 CPD hours, 500+ delegates, expert speakers, networking and gala dinner. In-person + Virtual." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/3d.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/conference.css" />
+  <link rel="stylesheet" href="css/conference-3d.css" />
+  <link rel="stylesheet" href="css/conference-responsive.css" />
+  <link rel="stylesheet" href="css/widgets.css" />
+  <meta name="color-scheme" content="dark light" />
+  <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+  <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
+  <script>
+    document.documentElement.classList.add('js');
+    setTimeout(function(){
+      document.querySelectorAll('[data-reveal]').forEach(function(el){
+        el.classList.add('is-visible');
+      });
+    }, 2500);
+  </script>
+  <style>
+    /* Small local styles for previous speakers strip (selection visual) */
+    .prev-speakers-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .prev-speakers {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 8px 6px;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      flex: 1;
+    }
+
+    .prev-speakers::-webkit-scrollbar {
+      height: 10px
+    }
+
+    .prev-speakers::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, .2);
+      border-radius: 10px
+    }
+
+    .prev-speaker {
+      flex: 0 0 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 140px;
+      margin-bottom: 8px;
+    }
+
+    .prev-speaker .prev-speaker__img {
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--card-bg);
+      display: inline-block;
+    }
+
+    .prev-speaker .prev-speaker__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .prev-speaker .prev-speaker__name {
+      font-weight: 700;
+      margin-top: 8px;
+      font-size: .95rem
+    }
+
+    .prev-speaker .prev-speaker__role {
+      font-size: .82rem;
+      color: var(--muted-dark);
+    }
+
+    .prev-speaker.is-selected {
+      outline: 3px solid var(--brass);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+      border-radius: 10px
+    }
+
+    .prev-speakers-nav {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border-light);
+      background: var(--card-bg);
+      color: var(--ink);
+      font-size: 1.25rem;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .prev-speakers-nav:hover {
+      border-color: var(--brass);
+    }
+
+    .prev-speakers-nav:disabled {
+      opacity: .35;
+      cursor: not-allowed;
+    }
+
+    /* Allow users to drag on desktop to scroll the strip */
+    .prev-speakers.is-dragging {
+      cursor: grabbing
+    }
+
+    @media (min-width: 769px) {
+      .prev-speakers-nav {
+        display: grid;
+        place-items: center;
+      }
+    }
+  </style>
+
+  <style>
+    /* MAC SAFARI FIX: Ensure content visible if JS modules fail */
+    .js [data-reveal] { opacity: 0; transform: translateY(24px); }
+    .js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+    /* If JS is disabled or modules fail, show content */
+    html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important; }
+    /* Fallback after 3s */
+    @media (prefers-reduced-motion: no-preference) {
+      [data-reveal] { transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="conf-header" id="confHeader">
+    <div class="conf-header__inner">
+      <a href="index.html" class="logo" aria-label="Return to ICAN UK homepage">
+        <div class="logo-img"><img src="images/logo.jpg" alt="ICAN UK Logo"></div>
+        <div class="conf-brand__divider"></div>
+        <div class="conf-brand__year">CONFERENCE 2026</div>
+      </a>
+      <nav class="conf-nav" aria-label="Conference sections">
+        <a href="#overview">Overview</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#experience">Experience</a>
+        <a href="#venue">Venue</a>
+        <a href="#pricing" class="btn btn--brass" style="padding:10px 18px; color:white;">Register Now</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span
+          class="hamburger"></span></button>
+    </div>
+    <div class="progress-bar" id="progressBar"></div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="#overview">Overview</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#speakers">Speakers</a>
+    <a href="#experience">Experience</a>
+    <a href="#venue">Venue</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="index.html" style="margin-top:12px; color:var(--brass);">← Back to ICAN UK Home</a>
+    <a href="#pricing" class="btn btn--brass" style="margin-top:18px;">Register Now</a>
+  </div>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <!-- HERO -->
+  <section class="conf-hero" id="overview">
+    <div class="conf-hero__scene" aria-hidden="true">
+      <div class="scene-back"></div>
+      <canvas id="conf-three-canvas" aria-hidden="true"></canvas>
+      <div class="conf-hero__world">
+        <div class="conference-core" id="conferenceCore">
+          <div class="conference-core__ring conference-core__ring--outer"></div>
+          <div class="conference-core__ring conference-core__ring--middle"></div>
+          <div class="conference-core__ring conference-core__ring--inner"></div>
+          <div class="conference-core__face">
+            <div><span>2026</span><small>CONFERENCE</small></div>
+          </div>
+          <div class="conference-core__orb conference-core__orb--1"></div>
+          <div class="conference-core__orb conference-core__orb--2"></div>
+          <div class="conference-core__orb conference-core__orb--3"></div>
+          <div class="conference-core__orb conference-core__orb--4"></div>
+          <div class="conference-core__light"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conf-hero__content">
+      <div>
+        <a href="index.html" class="breadcrumb"><span>←</span> ICAN UK / CONFERENCE</a>
+        <div class="conf-hero__eyebrow" data-reveal>ICAN UK & District Society • Est. 1988</div>
+        <h1 class="conf-hero__title" data-reveal>NAVIGATING<br><em>THE FUTURE</em>OF GLOBAL FINANCE</h1>
+        <div class="conf-hero__meta" data-reveal>
+          <span>
+            <dot></dot> 18–19 NOVEMBER 2026
+          </span>
+          <span>
+            <dot></dot> LONDON, UNITED KINGDOM
+          </span>
+          <span>
+            <dot></dot> IN-PERSON + VIRTUAL
+          </span>
+          <span>
+            <dot></dot> 12 CPD HOURS
+          </span>
+        </div>
+        <div class="conf-hero__actions" data-reveal>
+          <a href="#pricing" class="btn btn--brass">Register Now →</a>
+          <a href="#" class="btn btn--ghost"
+            style="background:rgba(255,255,255,.08); color:white; border-color:rgba(255,255,255,.18); backdrop-filter:blur(8px);"
+            onclick="alert('Brochure download - replace with real PDF link'); return false;">Download Brochure</a>
+        </div>
+        <div style="margin-top:28px; display:flex; gap:18px; color:rgba(242,239,231,.6); font-size:.78rem;">
+          <span>500+ Delegates Expected</span>
+          <span>•</span>
+          <span>Previous: 92% Satisfaction</span>
+        </div>
+      </div>
+      <div class="conf-hero__visual" style="min-height:420px;" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- EVENT STRIP -->
+  <div class="conf-strip">
+    <div class="conf-strip__inner">
+      <div class="conf-strip__item">
+        <div class="conf-strip__label">Date</div>
+        <div class="conf-strip__value">18–19 NOV</div>
+      </div>
+      <div class="conf-strip__item">
+        <div class="conf-strip__label">Location</div>
+        <div class="conf-strip__value">LONDON</div>
+      </div>
+      <div class="conf-strip__item">
+        <div class="conf-strip__label">Format</div>
+        <div class="conf-strip__value">IN-PERSON + ONLINE</div>
+      </div>
+      <div class="conf-strip__item">
+        <div class="conf-strip__label">CPD Hours</div>
+        <div class="conf-strip__value">12 HOURS</div>
+      </div>
+      <div class="conf-strip__item">
+        <div class="conf-strip__label">Delegates</div>
+        <div class="conf-strip__value">500+ DELEGATES</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY ATTEND -->
+  <section class="conf-why" id="experience">
+    <div class="container">
+      <div class="section-label">Why Attend</div>
+      <div class="conf-why__grid">
+        <div data-reveal>
+          <h2 class="conf-why__big"><span>More than a conference.</span>A professional advantage.</h2>
+          <p style="margin-top:18px; line-height:1.7; color:var(--muted-dark); max-width:46ch;">ICAN UK is not simply
+            hosting another event. It is creating a professional environment where finance leaders, accountants and
+            emerging professionals come together to understand change, earn professional value and shape the future.</p>
+        </div>
+        <div class="benefits" data-reveal>
+          <div class="benefit">
+            <div class="benefit__num">01 — INSIGHT</div>
+            <div class="benefit__title">Understand the forces reshaping global finance.</div>
+            <div class="benefit__text">Technology, regulation, AI and markets redefining the modern finance
+              professional.</div>
+          </div>
+          <div class="benefit">
+            <div class="benefit__num">02 — CPD</div>
+            <div class="benefit__title">Earn professional development credit.</div>
+            <div class="benefit__text">Expert-led sessions, workshops and panels accredited for CPD.</div>
+          </div>
+          <div class="benefit">
+            <div class="benefit__num">03 — NETWORK</div>
+            <div class="benefit__title">Build meaningful relationships.</div>
+            <div class="benefit__text">Across industries, firms and borders — structured and organic networking.</div>
+          </div>
+          <div class="benefit">
+            <div class="benefit__num">04 — OPPORTUNITY</div>
+            <div class="benefit__title">Discover partnerships and ideas.</div>
+            <div class="benefit__text">Professional opportunities, collaborations and career pathways.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CPD FEATURE -->
+  <section class="conf-cpd">
+    <div class="container">
+      <div class="cpd-feature" data-reveal>
+        <div>
+          <div class="cpd-feature__number">12</div>
+          <div class="cpd-feature__label">CPD Hours</div>
+        </div>
+        <div>
+          <h3 style="font-size:clamp(1.6rem,3vw,2.2rem); line-height:1.1; max-width:22ch;">Earn professional development
+            credit while engaging with leading voices across finance and business.</h3>
+          <p class="cpd-feature__text" style="margin-top:12px;">Full attendance provides up to 12 CPD hours. Virtual
+            attendance up to 8 hours. Certificates issued digitally within 7 working days. Value recognized by employers
+            and professional bodies.</p>
+          <div style="margin-top:18px; display:flex; gap:10px;"><span class="chip"
+              style="border:1px solid var(--border-light); padding:6px 12px; border-radius:100px; font-size:.72rem; font-weight:600;">ACCREDITED</span><span
+              class="chip"
+              style="border:1px solid var(--border-light); padding:6px 12px; border-radius:100px; font-size:.72rem; font-weight:600;">CERTIFICATE
+              ISSUED</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEMES -->
+  <section class="conf-themes">
+    <div class="container">
+      <div class="section-label">The Conversation</div>
+      <div data-reveal>
+        <h2
+          style="font-size:clamp(2rem,4vw,3rem); line-height:.95; display: flex; flex-direction: column; gap: 5px;margin: 14px 0px 10px 0px;">
+          Finance is changing.<br><span style="color:var(--green);">What happens next is a professional
+            conversation.</span></h2>
+        <p class="themes-intro">Technology, regulation, artificial intelligence and global markets are reshaping the
+          role of the modern finance professional. This year's themes are chosen for practical relevance and
+          professional advantage.</p>
+      </div>
+      <div class="themes-grid" id="themesGrid" data-reveal></div>
+    </div>
+  </section>
+
+  <!-- AUDIENCE -->
+  <section class="conf-audience">
+    <div class="container">
+      <div class="section-label">Who Should Attend</div>
+      <h2 style="margin-top:20px; font-size:clamp(2rem,4vw,3.2rem); max-width:720px;" data-reveal>BUILT FOR THE FULL
+        SPECTRUM OF THE PROFESSION.</h2>
+      <div class="audience-constellation" id="audienceConstellation" data-reveal>
+        <!-- Nodes positioned via JS + CSS -->
+        <div class="audience-node" style="left:50%; top:12%; transform:translateX(-50%);" data-id="finance-leaders">
+          FINANCE LEADERS<div class="audience-node__desc">Finance Directors, Controllers and senior managers driving
+            transformation.</div>
+        </div>
+        <div class="audience-node" style="left:12%; top:36%;" data-id="accountants">ACCOUNTANTS<div
+            class="audience-node__desc">Chartered Accountants across practice and industry seeking technical depth and
+            CPD.</div>
+        </div>
+        <div class="audience-node" style="left:68%; top:36%;" data-id="cfos">CFOs<div class="audience-node__desc">
+            Finance leaders shaping strategy, governance and performance.</div>
+        </div>
+        <div class="audience-node" style="left:50%; top:52%; transform:translateX(-50%);" data-id="business-leaders">
+          BUSINESS LEADERS<div class="audience-node__desc">Entrepreneurs and executives navigating finance, growth and
+            regulation.</div>
+        </div>
+        <div class="audience-node" style="left:22%; top:72%;" data-id="members">MEMBERS<div class="audience-node__desc">
+            ICAN members and Fellows from across the UK district.</div>
+        </div>
+        <div class="audience-node" style="left:58%; top:72%;" data-id="non-members">NON-MEMBERS<div
+            class="audience-node__desc">Professionals exploring ICAN standards, community and development.</div>
+        </div>
+        <div class="audience-node" style="left:35%; top:86%;" data-id="students">STUDENTS<div
+            class="audience-node__desc">Students and recent qualifiers building career foundations.</div>
+        </div>
+        <div class="audience-node" style="left:62%; top:86%;" data-id="associates">ASSOCIATES<div
+            class="audience-node__desc">Associates seeking pathways to full qualification and network.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREVIOUS CONFERENCE -->
+  <section class="conf-previous" id="previous">
+    <div class="container">
+      <div class="section-label">Social Proof</div>
+      <div style="margin-top:20px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;" data-reveal>
+        <h2 style="font-size:clamp(2rem,4vw,3.2rem); max-width:620px;">BEFORE THIS YEAR'S CONVERSATION, SEE WHAT
+          HAPPENED LAST TIME.</h2>
+        <p style="max-width:38ch; line-height:1.6; color:var(--muted-dark);">High-quality photography from previous
+          conferences. If real photography unavailable, placeholders clearly marked. Previous edition provides context
+          for 2026.</p>
+      </div>
+      <div class="prev-gallery" data-reveal>
+        <div class="prev-gallery__item prev-gallery__main">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&h=800&fit=crop"
+            alt="Previous conference main stage" loading="lazy">
+          <div class="prev-gallery__overlay">Main Stage — 2025 Conference</div>
+        </div>
+        <div class="prev-gallery__item">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop"
+            alt="Keynote speaker" loading="lazy">
+          <div class="prev-gallery__overlay">Keynote Session</div>
+        </div>
+        <div class="prev-gallery__item">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=400&fit=crop" alt="Networking"
+            loading="lazy">
+          <div class="prev-gallery__overlay">Networking</div>
+        </div>
+        <div class="prev-gallery__item">
+          <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&h=400&fit=crop" alt="Panel"
+            loading="lazy">
+          <div class="prev-gallery__overlay">Panel Discussion</div>
+        </div>
+        <div class="prev-gallery__item">
+          <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&h=400&fit=crop" alt="Gala dinner"
+            loading="lazy">
+          <div class="prev-gallery__overlay">Gala Dinner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREV RESULTS -->
+  <section class="conf-results">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;" data-reveal>
+        <h3 style="font-size:clamp(1.6rem,3vw,2.2rem);">2025 CONFERENCE RESULTS — [PLACEHOLDER, REPLACE WITH REAL DATA]
+        </h3>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;"><span
+            style="font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; padding:6px 12px; border:1px solid var(--border-light); border-radius:100px; background:white;">PLACEHOLDER
+            DATA</span></div>
+      </div>
+      <div class="results-grid" id="resultsGrid" data-reveal></div>
+      <div data-reveal>
+        <div
+          style="font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--muted); margin: 15px">
+          What Attendees Gained</div>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;" id="outcomesList"></div>
+      </div>
+      <div style="margin-top:48px;">
+        <div
+          style="font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--muted); margin-bottom:16px;">
+          Previous Speakers Strip</div>
+        <div class="prev-speakers-wrap">
+          <button class="prev-speakers-nav" id="prevSpeakersPrev" type="button"
+            aria-label="Scroll previous speakers left">←</button>
+          <div class="prev-speakers" id="prevSpeakersStrip"></div>
+          <button class="prev-speakers-nav" id="prevSpeakersNext" type="button"
+            aria-label="Scroll previous speakers right">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="conf-agenda" id="agenda">
+    <div class="container">
+      <div class="section-label">The Programme</div>
+      <h2 style="margin-top:20px; font-size:clamp(2.2rem,4.5vw,3.6rem); max-width:680px;" data-reveal>TWO DAYS OF
+        INSIGHT, DEBATE AND CONNECTION.</h2>
+      <p style="margin-top:14px; color:rgba(248,247,243,.6); max-width:56ch; line-height:1.6;" data-reveal>Data-driven
+        agenda. Filters: All / Day 1 / Day 2 / Virtual. Click a session for details, speaker, description and calendar
+        action.</p>
+      <div class="agenda-filters" id="agendaFilters" data-reveal>
+        <button class="agenda-filter is-active" data-filter="all">All</button>
+        <button class="agenda-filter" data-filter="day-1">Day 1 — 18 Nov</button>
+        <button class="agenda-filter" data-filter="day-2">Day 2 — 19 Nov</button>
+        <button class="agenda-filter" data-filter="virtual">Virtual</button>
+      </div>
+      <div class="agenda-list" id="agendaList" data-reveal></div>
+    </div>
+  </section>
+
+  <!-- SPEAKERS -->
+  <section class="conf-speakers" id="speakers">
+    <div class="container">
+      <div class="section-label">Speakers</div>
+      <h2 style="margin-top:20px; font-size:clamp(2rem,4.5vw,3.4rem); max-width:720px;" data-reveal>THE PEOPLE SHAPING
+        THE CONVERSATION.</h2>
+      <div class="speakers-grid" id="speakersGrid" data-reveal></div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="conf-pricing" id="pricing">
+    <div class="container">
+      <div class="section-label"
+        style="color:var(--brass); border-color:rgba(176,149,99,.22); background:rgba(176,149,99,.08);">Registration
+      </div>
+      <h2 style="margin-top:20px; font-size:clamp(2.2rem,4.5vw,3.6rem); max-width:720px;" data-reveal>CHOOSE HOW YOU
+        WANT TO ATTEND.</h2>
+      <p style="margin-top:14px; color:rgba(248,247,243,.6); max-width:56ch; line-height:1.6;" data-reveal>Pricing
+        editable via data.js. Example values shown — replace with final ICAN UK pricing. Recommended ticket visually
+        prominent.</p>
+
+      <div class="early-bird-countdown" id="earlyBirdCountdown" data-reveal>
+        <div class="eb-countdown__label">Early bird ends in — <span id="earlyBirdDate">30 September 2026</span></div>
+        <div class="eb-countdown__grid">
+          <div class="eb-countdown__box"><b data-days>00</b><span>Days</span></div>
+          <div class="eb-countdown__box"><b data-hours>00</b><span>Hours</span></div>
+          <div class="eb-countdown__box"><b data-mins>00</b><span>Minutes</span></div>
+          <div class="eb-countdown__box"><b data-secs>00</b><span>Seconds</span></div>
+        </div>
+      </div>
+
+      <div class="pricing-grid" id="pricingGrid" data-reveal></div>
+
+      <div class="regi-div" data-reveal>
+        <div>
+          <div style="font-weight:700;">Registration Flow</div>
+          <div style="margin-top:6px; color:rgba(248,247,243,.6); font-size:.9rem;">Register Now → Attendance Type →
+            Ticket Type → Delegate Information → Payment → Confirmation. External platform redirect clearly
+            communicated.</div>
+        </div>
+        <a href="#" class="btn btn--ghost"
+          style="background:rgba(255,255,255,.06); color:white; border-color:rgba(255,255,255,.12);"
+          onclick="alert('Link to external registration platform'); return false;">View Registration T&Cs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENUE -->
+  <section class="conf-venue" id="venue">
+    <div class="container">
+      <div class="section-label">Venue</div>
+      <h2 style="margin-top:20px; font-size:clamp(2rem,4vw,3.2rem);" data-reveal>LONDON, UNITED KINGDOM — [VENUE
+        PLACEHOLDER]</h2>
+      <div class="venue-grid" data-reveal>
+        <div class="venue-map" id="venueMap"></div>
+        <div class="venue-details">
+          <div>
+            <div class="venue-detail__label">Address</div>
+            <div class="venue-detail__value">[VENUE NAME]<br>[ADDRESS LINE 1]<br>London [POSTCODE]<br>United Kingdom
+            </div>
+          </div>
+          <div>
+            <div class="venue-detail__label">Nearest Transport</div>
+            <div class="venue-detail__value">Tube: [NEAREST TUBE]<br>Train: [NEAREST TRAIN]<br>Airport: Heathrow /
+              Gatwick / City<br>Parking: [PARKING INFO]</div>
+          </div>
+          <div>
+            <div class="venue-detail__label">Accessibility</div>
+            <div class="venue-detail__value">Step-free access, hearing loop, accessible toilets. Contact us for specific
+              requirements.</div>
+          </div>
+          <div style="display:flex; gap:12px; margin-top:8px;"><a href="https://maps.google.com/?q=London"
+              target="_blank" class="btn btn--brass">Get Directions</a><a href="#" class="btn btn--ghost"
+              onclick="alert('Download venue info PDF'); return false;">Venue Guide PDF</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGISTICS -->
+  <section class="conf-logistics">
+    <div class="container">
+      <div class="logi-acc" data-reveal>
+        <div>
+          <h3 style="font-size:1.6rem;">Travel & Accommodation</h3>
+          <div class="accordion">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="panel-travel">Travel — Tube, Train,
+              Airport, Parking</button>
+            <div class="accordion__panel" id="panel-travel">
+              <div class="accordion__content">Detailed travel information to be supplied by ICAN UK. Include tube lines,
+                train services, airport transfers, taxi, walking routes and accessibility. Keep practical, reduce
+                friction.</div>
+            </div>
+          </div>
+          <div class="accordion">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="panel-accommodation">Accommodation —
+              Recommended Hotels & Rates</button>
+            <div class="accordion__panel" id="panel-accommodation">
+              <div class="accordion__content">Only display real information provided by ICAN UK. Include recommended
+                hotels, distance from venue, conference rates, discount codes and booking links. Do not invent
+                discounts.</div>
+            </div>
+          </div>
+          <div class="accordion">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="panel-visa">Visa Information —
+              International Delegates</button>
+            <div class="accordion__panel" id="panel-visa">
+              <div class="accordion__content"><strong>Travelling from outside the UK?</strong><br>Learn about visa
+                requirements, invitation letters, supporting documents and conference confirmation. Link to official UK
+                Gov guidance. Do not present legal advice as authoritative unless supplied by organization.</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:1.6rem;">Sponsors & Partners</h3>
+          <p style="margin-top:10px; color:var(--muted-dark); line-height:1.6; font-size:.92rem;">Institutional,
+            restrained presentation. Real logos only. Placeholder where unavailable.</p>
+          <div id="sponsorsContainer"></div>
+          <div
+            style="margin-top:32px; padding:22px; border:1px solid var(--border-light); border-radius:16px; background:var(--card-bg);">
+            <div style="font-weight:700;">Interested in partnering with ICAN UK Conference?</div>
+            <p style="margin-top:6px; font-size:.88rem; color:var(--muted-dark); line-height:1.5;">Sponsor packages
+              available. Showcase your brand to 500+ finance leaders.</p>
+            <a href="#" class="btn btn--ghost" style="margin-top:14px;"
+              onclick="alert('Sponsor enquiry form'); return false;">Become a Sponsor</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="conf-faq" id="faq">
+    <div class="container">
+      <div class="section-label">FAQ</div>
+      <h2 style="margin-top:20px; font-size:clamp(2rem,4vw,3.2rem);" data-reveal>WHAT ELSE DO YOU NEED TO KNOW?</h2>
+      <div class="faq-list" id="faqList" data-reveal></div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="conf-final">
+    <div class="conf-final__core" aria-hidden="true">
+      <div class="conference-core"
+        style="position:relative; left:auto; top:auto; transform:none; width:320px; height:320px; margin-inline:auto;">
+        <div class="conference-core__ring conference-core__ring--outer"></div>
+        <div class="conference-core__ring conference-core__ring--middle"></div>
+        <div class="conference-core__face">
+          <div><span>2026</span><small>CONFERENCE</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="container" data-reveal style="position:relative; z-index:2;">
+      <h2>READY TO JOIN THE CONVERSATION?</h2>
+      <p>2026 ICAN UK Conference — 18–19 November, London. In-person + Virtual. 12 CPD Hours. 500+ Delegates.</p>
+      <div class="conf-final__actions">
+        <a href="#pricing" class="btn btn--brass">Register Now →</a>
+        <a href="#" class="btn btn--ghost"
+          style="background:rgba(255,255,255,.08); color:white; border-color:rgba(255,255,255,.18);"
+          onclick="alert('Download brochure PDF'); return false;">Download Brochure</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1.2fr .8fr .8fr; gap:40px;">
+        <div>
+          <div class="logo"><span class="logo__top" style="color:var(--white)">ICAN UK</span><span
+              class="logo__bottom">DISTRICT SOCIETY</span></div>
+          <p style="margin-top:14px; max-width:36ch; line-height:1.6;">A not-for-profit district society of the
+            Institute of Chartered Accountants of Nigeria, registered in the United Kingdom. Building professional
+            excellence since 1988.</p>
+        </div>
+        <div>
+          <div class="mono">Conference</div>
+          <div style="margin-top:14px; display:grid; gap:8px; font-size:.9rem;"><a href="#overview">Overview</a><a
+              href="#agenda">Agenda</a><a href="#speakers">Speakers</a><a href="#venue">Venue</a><a
+              href="#pricing">Register</a></div>
+        </div>
+        <div>
+          <div class="mono">Contact</div>
+          <div style="margin-top:14px; font-size:.9rem; line-height:1.6;">London, United
+            Kingdom<br>members@icanuk.org.uk<br>+44 (0)20 XXXX XXXX</div>
+          <div style="margin-top:18px;"><a href="index.html"
+              style="font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; color:var(--brass); font-weight:600;">←
+              Back to Home</a></div>
+        </div>
+      </div>
+      <div
+        style="margin-top:60px; padding-top:24px; border-top:1px solid rgba(255,255,255,.06); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:.78rem;">
+        <span>© 2026 ICAN UK & District Society. All rights reserved.</span><span>Design: Editorial + CSS 3D • Vanilla
+          JS • Conference Hub 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DRAWER -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <div class="session-drawer" id="sessionDrawer" aria-hidden="true"></div>
+
+  <!-- SPEAKER MODAL -->
+  <dialog class="speaker-modal" id="speakerModal" aria-labelledby="speakerModalTitle"></dialog>
+
+  <!-- MOBILE REGISTER BAR -->
+  <div class="mobile-register-bar" id="mobileRegisterBar">
+    <div class="mobile-register-bar__info">£200 • 12 CPD Hours<small>Conference 2026 — London</small></div>
+    <a href="#pricing" class="btn btn--brass" style="padding:10px 18px;">Register</a>
+  </div>
+
+  <script src="js/conference/main.bundle.js"></script>
+  <script>
+    window.addEventListener('error', function(e){
+      if(e.message && (e.message.includes('Failed to load') || e.message.includes('import'))){
+        console.warn('Conference module failed, forcing visible');
+        document.querySelectorAll('[data-reveal]').forEach(function(el){ el.classList.add('is-visible'); });
+      }
+    });
+  </script>
+  <script>
+    // Shared utilities from homepage + mobile nav
+    (function () {
+      const navToggle = document.getElementById('navToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const backdrop = document.getElementById('navBackdrop');
+      function closeNav() {
+        mobileNav?.classList.remove('open');
+        navToggle?.classList.remove('is-open');
+        navToggle?.setAttribute('aria-expanded', 'false');
+        backdrop?.classList.remove('visible');
+      }
+      function openNav() {
+        mobileNav?.classList.add('open');
+        navToggle?.classList.add('is-open');
+        navToggle?.setAttribute('aria-expanded', 'true');
+        backdrop?.classList.add('visible');
+      }
+      navToggle?.addEventListener('click', () => {
+        if (mobileNav?.classList.contains('open')) closeNav(); else openNav();
+      });
+      backdrop?.addEventListener('click', closeNav);
+      mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+
+      // Populate themes, results, outcomes from data.js after load
+      // Themes, results etc will be injected by JS modules that import data
+      // But we also inject via inline for quick paint before modules
+      const themes = ["AI & ACCOUNTING", "GLOBAL TAX", "REGULATION & COMPLIANCE", "FINTECH & INNOVATION", "LEADERSHIP", "FUTURE OF WORK", "SUSTAINABILITY REPORTING", "RISK & RESILIENCE"];
+      const themesGrid = document.getElementById('themesGrid');
+      if (themesGrid) {
+        themesGrid.innerHTML = themes.map(t => `<div class="theme-chip">${t}</div>`).join('');
+      }
+
+      // Audience constellation click
+      document.querySelectorAll('.audience-node').forEach(node => {
+        node.addEventListener('click', () => {
+          const active = node.classList.contains('is-active');
+          document.querySelectorAll('.audience-node').forEach(n => n.classList.remove('is-active'));
+          if (!active) node.classList.add('is-active');
+        });
+      });
+
+      // Results placeholder
+      const resultsGrid = document.getElementById('resultsGrid');
+      if (resultsGrid) {
+        resultsGrid.innerHTML = [
+          { v: "550+", l: "Delegates", d: "From across UK and Nigeria" },
+          { v: "18", l: "Expert Speakers", d: "Leaders from Big Four, industry" },
+          { v: "12", l: "CPD Hours", d: "Accredited development" },
+          { v: "92%", l: "Satisfaction", d: "Attendee satisfaction rate" }
+        ].map(r => `<div class="result-card"><div class="result-card__num">${r.v}</div><div class="result-card__label">${r.l}</div><div class="result-card__desc">${r.d}</div></div>`).join('');
+      }
+      const outcomesList = document.getElementById('outcomesList');
+      if (outcomesList) {
+        outcomesList.innerHTML = ["Practical insight", "Professional connections", "Industry knowledge", "New opportunities", "CPD development", "Community belonging"].map(o => `<span style="padding:8px 14px; border:1px solid var(--border-light); border-radius:100px; background:white; font-size:.8rem; font-weight:600;">${o}</span>`).join('');
+      }
+
+      // Prev speakers strip - dynamic & selectable (editable list)
+      const prevStrip = document.getElementById('prevSpeakersStrip');
+      const prevLeftBtn = document.getElementById('prevSpeakersPrev');
+      const prevRightBtn = document.getElementById('prevSpeakersNext');
+      if (prevStrip) {
+        const normalizeImagePath = (src) => String(src || '').replace(/\\/g, '/').toLowerCase();
+
+        // Replace or extend this array with real previous speaker data (name, role, image)
+        const prevSpeakers = [
+          { name: "Dr. Jane Doe", role: "Chair, Finance Dept", img: "images/speaker-1.jpg" },
+          { name: "Mr. John Smith", role: "Partner, Big Four", img: "images/speaker-2.jpg" },
+          { name: "Ms. Ada Johnson", role: "Head of Tax", img: "images/speaker-3.jpg" },
+          { name: "Prof. Michael Lee", role: "Regulation Expert", img: "images/speaker-4.jpg" },
+          { name: "Mrs. Grace Obi", role: "Founder, FinTechX", img: "images/speaker-5.jpg" },
+          { name: "Mr. Alex Brown", role: "CFO, Acme Ltd", img: "images/speaker-6.jpg" }
+        ];
+
+        function renderStrip() {
+          prevStrip.innerHTML = prevSpeakers.map((s, i) => `
+            <label class="prev-speaker" style="display:inline-block; margin-right:12px; cursor:pointer;">
+              <input type="checkbox" class="prev-speaker__select" data-index="${i}" style="display:none">
+              <div class="prev-speaker__img"><img src="${normalizeImagePath(s.img)}" alt="${s.name}" loading="lazy" onerror="this.parentElement.style.background='var(--stone)'"></div>
+              <div class="prev-speaker__name">${s.name}</div>
+              <div class="prev-speaker__role">${s.role}</div>
+            </label>
+          `).join('');
+
+          prevStrip.querySelectorAll('.prev-speaker').forEach((el) => {
+            el.addEventListener('click', () => {
+              const cb = el.querySelector('.prev-speaker__select');
+              cb.checked = !cb.checked;
+              el.classList.toggle('is-selected', cb.checked);
+            });
+          });
+        }
+
+        renderStrip();
+
+        /* prevSelectAll.type = 'button';
+        prevSelectAll.className = 'btn btn--ghost';
+        prevSelectAll.textContent = 'Select all';
+        prevSelectAll.addEventListener('click', ()=>{
+          prevStrip.querySelectorAll('.prev-speaker__select').forEach(cb=>{ cb.checked = true; cb.closest('.prev-speaker')?.classList.add('is-selected'); });
+        });
+
+        const prevClear = document.createElement('button');
+        prevClear.type = 'button';
+        prevClear.className = 'btn btn--ghost';
+        prevClear.textContent = 'Clear';
+        prevClear.addEventListener('click', ()=>{
+          prevStrip.querySelectorAll('.prev-speaker__select').forEach(cb=>{ cb.checked = false; cb.closest('.prev-speaker')?.classList.remove('is-selected'); });
+        }); */
+
+        // The "Select all" / "Clear" buttons above are disabled (commented out), so the controls bar
+        // that would hold them is not built either. (This block used to append the undefined
+        // `prevClear`, which threw an error and stopped the rest of this script from running.)
+
+        const updateScrollButtons = () => {
+          if (!prevLeftBtn || !prevRightBtn) return;
+          prevLeftBtn.disabled = prevStrip.scrollLeft <= 0;
+          const maxScroll = prevStrip.scrollWidth - prevStrip.clientWidth;
+          prevRightBtn.disabled = prevStrip.scrollLeft >= maxScroll - 1;
+        };
+
+        prevLeftBtn?.addEventListener('click', () => prevStrip.scrollBy({ left: -220, behavior: 'smooth' }));
+        prevRightBtn?.addEventListener('click', () => prevStrip.scrollBy({ left: 220, behavior: 'smooth' }));
+        prevStrip.addEventListener('scroll', updateScrollButtons, { passive: true });
+        updateScrollButtons();
+
+        window.getSelectedPrevSpeakers = () => Array.from(prevStrip.querySelectorAll('.prev-speaker__select')).filter(cb => cb.checked).map(cb => prevSpeakers[Number(cb.dataset.index)]);
+
+        (function enableStripInteraction(container) {
+          if (!container) return;
+          container.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaY) > 0) {
+              container.scrollLeft += e.deltaY;
+              e.preventDefault();
+            }
+          }, { passive: false });
+
+          let isDown = false; let startX = 0; let scrollLeft = 0;
+          container.addEventListener('pointerdown', (e) => {
+            isDown = true;
+            try { container.setPointerCapture(e.pointerId); } catch (e) { }
+            startX = e.clientX;
+            scrollLeft = container.scrollLeft;
+            container.classList.add('is-dragging');
+          });
+          container.addEventListener('pointermove', (e) => {
+            if (!isDown) return;
+            const dx = e.clientX - startX;
+            container.scrollLeft = scrollLeft - dx;
+          });
+          container.addEventListener('pointerup', (e) => {
+            isDown = false;
+            try { container.releasePointerCapture(e.pointerId); } catch (_) { }
+            container.classList.remove('is-dragging');
+          });
+          container.addEventListener('pointercancel', () => { isDown = false; container.classList.remove('is-dragging'); });
+        })(prevStrip);
+      }
+
+      // Sponsors
+      const sponsorsContainer = document.getElementById('sponsorsContainer');
+      if (sponsorsContainer) {
+        sponsorsContainer.innerHTML = `
+          <div class="sponsor-tier"><div class="sponsor-tier__label">Platinum</div><div class="sponsor-logos"><div class="sponsor-logo">[PLATINUM LOGO]</div><div class="sponsor-logo">[PLATINUM LOGO]</div></div></div>
+          <div class="sponsor-tier"><div class="sponsor-tier__label">Gold</div><div class="sponsor-logos"><div class="sponsor-logo">[GOLD LOGO]</div><div class="sponsor-logo">[GOLD LOGO]</div><div class="sponsor-logo">[GOLD LOGO]</div></div></div>
+          <div class="sponsor-tier"><div class="sponsor-tier__label">Silver</div><div class="sponsor-logos"><div class="sponsor-logo">[SILVER LOGO]</div><div class="sponsor-logo">[SILVER LOGO]</div></div></div>
+        `;
+      }
+
+      // FAQ
+      const faqList = document.getElementById('faqList');
+      if (faqList) {
+        const faqs = [
+          ["Who can attend?", "ICAN members, non-members, students, associates, and finance professionals across practice and industry."],
+          ["How many CPD hours are available?", "Up to 12 CPD hours for full in-person attendance. Virtual attendance offers up to 8 CPD hours."],
+          ["Can non-members attend?", "Yes. Non-members are welcome at non-member rates."],
+          ["Is there a virtual option?", "Yes. Hybrid — in-person in London plus live stream and 30-day on-demand."],
+          ["What is included in the ticket?", "Depends on ticket type. See pricing section for benefits."],
+          ["Can I transfer my ticket?", "Ticket transfers possible up to 7 days before event."],
+          ["Will I receive a CPD certificate?", "Yes. Digital certificates within 7 working days, subject to attendance."],
+          ["Are accommodation costs included?", "No. See Travel & Accommodation for negotiated hotel rates."],
+          ["How do I request a visa invitation letter?", "Registered delegates can request via confirmation email. For visa purposes only."],
+          ["What is the cancellation policy?", "Full refund up to 30 days before, 50% up to 14 days, no refund within 14 days but transfer allowed."],
+          ["Demo: How can I select all previous speakers?", "Use the 'Select all' button shown above the previous speakers. In the browser console you can call window.getSelectedPrevSpeakers() to return an array of selected speaker objects (name, role, img)."],
+          ["Demo: How do I update the 2025 results placeholder?", "Open the file and replace the placeholder text in the Results section or update the JS resultsGrid data at the top of the script. If you'd like, provide the exact results and I can inject them for you."]
+        ];
+
+        faqList.innerHTML = faqs.map(([q, a], i) => `
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-${i}">${q}</button>
+            <div class="faq-item__panel" id="faq-panel-${i}"><div class="faq-item__content">${a}</div></div>
+          </div>
+        `).join('');
+
+        faqList.querySelectorAll('.faq-item__trigger').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            document.getElementById(btn.getAttribute('aria-controls'))?.classList.toggle('is-open', !expanded);
+          });
+        });
+      }
+
+      // make FAQ rendering available globally in case the module loader is delayed or fails
+      window.renderConferenceFAQ = function () {
+        const list = document.getElementById('faqList');
+        if (!list) return;
+        const faqs = [
+          ["Who can attend?", "ICAN members, non-members, students, associates, and finance professionals across practice and industry."],
+          ["How many CPD hours are available?", "Up to 12 CPD hours for full in-person attendance. Virtual attendance offers up to 8 CPD hours."],
+          ["Can non-members attend?", "Yes. Non-members are welcome at non-member rates."],
+          ["Is there a virtual option?", "Yes. Hybrid — in-person in London plus live stream and 30-day on-demand."],
+          ["What is included in the ticket?", "Depends on ticket type. See pricing section for benefits."],
+          ["Can I transfer my ticket?", "Ticket transfers possible up to 7 days before event."],
+          ["Will I receive a CPD certificate?", "Yes. Digital certificates within 7 working days, subject to attendance."],
+          ["Are accommodation costs included?", "No. See Travel & Accommodation for negotiated hotel rates."],
+          ["How do I request a visa invitation letter?", "Registered delegates can request via confirmation email. For visa purposes only."],
+          ["What is the cancellation policy?", "Full refund up to 30 days before, 50% up to 14 days, no refund within 14 days but transfer allowed."],
+          ["Demo: How can I select all previous speakers?", "Use the 'Select all' button shown above the previous speakers. In the browser console you can call window.getSelectedPrevSpeakers() to return an array of selected speaker objects (name, role, img)."],
+          ["Demo: How do I update the 2025 results placeholder?", "Open the file and replace the placeholder text in the Results section or update the JS resultsGrid data at the top of the script. If you'd like, provide the exact results and I can inject them for you."]
+        ];
+        list.innerHTML = faqs.map(([q, a], i) => `
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-panel-${i}">${q}</button>
+            <div class="faq-item__panel" id="faq-panel-${i}"><div class="faq-item__content">${a}</div></div>
+          </div>
+        `).join('');
+        list.querySelectorAll('.faq-item__trigger').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            document.getElementById(btn.getAttribute('aria-controls'))?.classList.toggle('is-open', !expanded);
+          });
+        });
+      };
+      window.renderConferenceFAQ();
+
+    })();
+  </script>
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/feedback-widget.js"></script>
+  <script src="js/chatbot-widget.js"></script>
+</body>
+
+</html>

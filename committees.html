@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Standing Committees &amp; Committee Leads — ICAN UK &amp; District Society</title>
+  <meta name="description"
+    content="Discover the standing committees and committee leads driving the technical, welfare, ethical, and professional programmes of ICAN UK & District Society." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <meta name="color-scheme" content="dark light" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="ICAN UK Logo" class="logo-img" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" title="Menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="district-structure.html">District Structure</a>
+        <a href="committees.html" class="is-active" style="color:var(--green);font-weight:700">Committees</a>
+        <a href="executive.html">Executive Team</a>
+        <a href="past-chairs.html">Past Chairs</a>
+        <a href="conference.html">Conference</a>
+        <a href="index.html#members" class="btn btn--brass" style="padding:10px 18px">Member Portal</a>
+      </nav>
+
+      <div class="mobile-nav" id="mobileNav" aria-hidden="true" tabindex="-1">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="district-structure.html">District Structure</a>
+        <a href="committees.html">Committees</a>
+        <a href="executive.html">Executive Team</a>
+        <a href="past-chairs.html">Past Chairs</a>
+        <a href="conference.html">Conference</a>
+        <a href="index.html#members" class="btn btn--brass">Member Portal</a>
+      </div>
+      <div class="nav-backdrop" id="navBackdrop" aria-hidden="true" tabindex="-1"></div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__content">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a> <span>/</span> <span>Governance</span> <span>/</span> <span>Committees &amp; Leads</span>
+        </div>
+        <h1 class="page-title">OUR COMMITTEES &amp; COMMITTEE LEADS</h1>
+        <p class="page-subtitle">
+          The Executive Committee constitutes specialized standing committees to assist in implementing its statutory programmes. Officers are appointed by the Executive Committee, with membership open to all members of the District Society.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUB-NAV / FILTER PILLS -->
+  <nav class="page-nav-bar" aria-label="Committee category filters">
+    <div class="container">
+      <div class="page-nav-bar__inner">
+        <button class="page-nav-pill is-active filter-btn" data-filter="all">All Committees (10)</button>
+        <button class="page-nav-pill filter-btn" data-filter="technical">Technical &amp; Conference</button>
+        <button class="page-nav-pill filter-btn" data-filter="operations">Operations &amp; Finance</button>
+        <button class="page-nav-pill filter-btn" data-filter="welfare">Welfare &amp; Membership</button>
+        <button class="page-nav-pill filter-btn" data-filter="advisory">Advisory &amp; Ethics</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="section" style="padding-top:48px;background:var(--bg)">
+    <div class="container">
+
+      <!-- MANDATE CALLOUT (Source: ican-uk.org/page/7) -->
+      <section class="content-box" style="margin-bottom:36px">
+        <div class="content-box__header">
+          <div>
+            <div class="content-box__kicker">Member Participation</div>
+            <h2 class="content-box__title">Standing Committee Appointments &amp; Membership</h2>
+          </div>
+          <span class="chip" style="color:var(--green);border-color:var(--green)">Open to All Members</span>
+        </div>
+        <p style="font-size:1.05rem;line-height:1.7;color:var(--ink);max-width:82ch">
+          "The Executive Committee constitutes various standing committees to assist in implementing its programmes. Officers of the standing committees are appointed by the Executive Committee while <strong>membership is open to all members of the District Society</strong>. There is also a Committee of Past Chairs and Patrons, where membership comprises all Past Chairs and Patrons of the District Society."
+        </p>
+        <div style="margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+          <a href="contact.html" class="btn btn--brass" style="padding:10px 18px">Volunteer for a Committee →</a>
+          <span style="font-size:0.88rem;color:var(--muted)">Contribute your skills to District initiatives and earn CPD credits.</span>
+        </div>
+      </section>
+
+      <!-- COMMITTEES GRID (Data from ican-uk.org/page/7 & page/10) -->
+      <section>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px" id="committeesGrid">
+
+          <!-- 1. International Conference Committee -->
+          <article class="committee-card" data-category="technical">
+            <div>
+              <div class="committee-card__top">
+                <h3 class="committee-card__title">International Conference Committee</h3>
+                <span class="chip" style="font-size:0.72rem;background:rgba(31,111,68,0.1);color:var(--green)">Flagship</span>
+              </div>
+              <p class="committee-card__mandate">
+                The Committee's objective is to organize, curate, and deliver the District's flagship annual International Accountants' Conference, overseeing keynote speakers, technical themes, venue logistics, CPD accreditation, and the Gala Dinner.
+              </p>
+            </div>
+            <div class="committee-leads-box">
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Committee Chair</span>
+                <span class="committee-lead-name">Tayo Animashaun, FCA</span>
+              </div>
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Secretary</span>
+                <span class="committee-lead-name">Kemi Phillips</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Technical, CCAB and Skills Committee -->
+          <article class="committee-card" data-category="technical">
+            <div>
+              <div class="committee-card__top">
+                <h3 class="committee-card__title">Technical, CCAB &amp; Skills Committee</h3>
+                <span class="chip" style="font-size:0.72rem;background:rgba(11,74,102,0.1);color:var(--navy)">CPD</span>
+              </div>
+              <p class="committee-card__mandate">
+                The Committee's objective is to organize technical masterclasses and workshops accredited by The Institute to fulfill the technical skills and professional development needs of members, and foster harmonious relations with UK CCAB bodies (ICAEW, ACCA, ICAS, CIPFA).
+              </p>
+            </div>
+            <div class="committee-leads-box">
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Committee Chair</span>
+                <span class="committee-lead-name">Seyi Bamisaye, FCA</span>
+              </div>
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Secretary</span>
+                <span class="committee-lead-name">Franklin Nakpodia</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Finance Committee -->
+          <article class="committee-card" data-category="operations">
+            <div>
+              <div class="committee-card__top">
+                <h3 class="committee-card__title">Finance Committee</h3>
+                <span class="chip" style="font-size:0.72rem;background:rgba(176,149,99,0.15);color:var(--ink)">Stewardship</span>
+              </div>
+              <p class="committee-card__mandate">
+                The Committee's objective is to ensure strict financial control, budgetary oversight, and transparency in all District affairs, as well as facilitate sustainable revenue generation and financial planning.
+              </p>
+            </div>
+            <div class="committee-leads-box">
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Committee Chair</span>
+                <span class="committee-lead-name">Benjamin Ajayi</span>
+              </div>
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Secretary</span>
+                <span class="committee-lead-name">Nnewima Nwafor-Orizu</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Media and Communications Committee -->
+          <article class="committee-card" data-category="operations">
+            <div>
+              <div class="committee-card__top">
+                <h3 class="committee-card__title">Media &amp; Communications Committee</h3>
+                <span class="chip" style="font-size:0.72rem;background:rgba(100,47,50,0.1);color:var(--oxblood)">Digital &amp; Press</span>
+              </div>
+              <p class="committee-card__mandate">
+                The Committee's objective is to deliver all media and communication needs of the District — across Print, Email, Web, and Social Media — as well as deliver all Information Technology infrastructure for the District Society.
+              </p>
+            </div>
+            <div class="committee-leads-box">
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Committee Chair</span>
+                <span class="committee-lead-name">Nnenna Anyanwu</span>
+              </div>
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Secretary</span>
+                <span class="committee-lead-name">Nojeem Yusuf</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Socials and Events Committee -->
+          <article class="committee-card" data-category="welfare">
+            <div>
+              <div class="committee-card__top">
+                <h3 class="committee-card__title">Socials &amp; Events Committee</h3>
+                <span class="chip" style="font-size:0.72rem;background:rgba(31,111,68,0.1);color:var(--green)">Community</span>
+              </div>
+              <p class="committee-card__mandate">
+                The Committee's objective is to facilitate members' social wellbeing, foster professional fellowship, and organize all District social gatherings, including the Annual Dinner &amp; Dance, networking mixers, and cultural evenings.
+              </p>
+            </div>
+            <div class="committee-leads-box">
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Committee Chair</span>
+                <span class="committee-lead-name">Wunmi Hassan, FCA</span>
+              </div>
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Secretary</span>
+                <span class="committee-lead-name">Olayinka Oluwi</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Ethics Committee -->
+          <article class="committee-card" data-category="advisory">
+            <div>
+              <div class="committee-card__top">
+                <h3 class="committee-card__title">Ethics Committee</h3>
+                <span class="chip" style="font-size:0.72rem;background:rgba(11,74,102,0.1);color:var(--navy)">Integrity</span>
+              </div>
+              <p class="committee-card__mandate">
+                The Committee's objectives are to develop a code of conduct for members of ICAN UK &amp; District Society, ensure meeting protocols and timeliness, and deliver appropriate Bye-Law concessions to safeguard institutional harmony.
+              </p>
+            </div>
+            <div class="committee-leads-box">
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Committee Chair</span>
+                <span class="committee-lead-name">Yetunde Raimi-Odimayo</span>
+              </div>
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Secretary</span>
+                <span class="committee-lead-name">Abiola Elizabeth James</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Membership and Regions Committee -->
+          <article class="committee-card" data-category="welfare">
+            <div>
+              <div class="committee-card__top">
+                <h3 class="committee-card__title">Membership &amp; Regions Committee</h3>
+                <span class="chip" style="font-size:0.72rem;background:rgba(176,149,99,0.15);color:var(--ink)">Admissions</span>
+              </div>
+              <p class="committee-card__mandate">
+                The Committee's objectives are to manage and safeguard the membership database, reach out to dormant members, expand the District's base, provide structured mentorship, and actively involve members in regional chapters across the UK.
+              </p>
+            </div>
+            <div class="committee-leads-box">
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Committee Chair</span>
+                <span class="committee-lead-name">Tope Imevbore</span>
+              </div>
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Secretary</span>
+                <span class="committee-lead-name">Chinasa Mbachu</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Benevolent Fund Committee -->
+          <article class="committee-card" data-category="welfare">
+            <div>
+              <div class="committee-card__top">
+                <h3 class="committee-card__title">Benevolent Fund Committee</h3>
+                <span class="chip" style="font-size:0.72rem;background:rgba(100,47,50,0.1);color:var(--oxblood)">Safety Net</span>
+              </div>
+              <p class="committee-card__mandate">
+                Established by District pioneers in 2014 as a tangible demonstration of our commitment to member welfare. Operates under confidential criteria to provide emergency financial aid and compassionate assistance to members and families in need.
+              </p>
+            </div>
+            <div class="committee-leads-box">
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Governance</span>
+                <span class="committee-lead-name">Appointed Welfare Board</span>
+              </div>
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Established</span>
+                <span class="committee-lead-name">2014 (Charter Mandate)</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9. Partnership & Sponsors Committee -->
+          <article class="committee-card" data-category="operations">
+            <div>
+              <div class="committee-card__top">
+                <h3 class="committee-card__title">Partnership &amp; Sponsors Committee</h3>
+                <span class="chip" style="font-size:0.72rem;background:rgba(31,111,68,0.1);color:var(--green)">Corporate</span>
+              </div>
+              <p class="committee-card__mandate">
+                Proactively engages existing and prospective corporate sponsors in both the UK and Nigeria, negotiating multi-year partnerships, commercial exhibitor packages, and alliances with complementary professional bodies.
+              </p>
+            </div>
+            <div class="committee-leads-box">
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Portfolio Focus</span>
+                <span class="committee-lead-name">Corporate Partnerships</span>
+              </div>
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Geography</span>
+                <span class="committee-lead-name">United Kingdom &amp; Nigeria</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10. Committee of Past Chairs and Patrons -->
+          <article class="committee-card" data-category="advisory">
+            <div>
+              <div class="committee-card__top">
+                <h3 class="committee-card__title">Committee of Past Chairs &amp; Patrons</h3>
+                <span class="chip" style="font-size:0.72rem;background:rgba(176,149,99,0.15);color:var(--ink)">Elders Council</span>
+              </div>
+              <p class="committee-card__mandate">
+                Comprises all Past Chairs and Patrons of the District Society since 1990. Advises the Executive Committee on constitutional questions referred to it and supports major institutional assemblies and national council relations.
+              </p>
+            </div>
+            <div class="committee-leads-box">
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Committee Chair</span>
+                <span class="committee-lead-name">David Fadipe, FCA</span>
+              </div>
+              <div class="committee-lead-row">
+                <span class="committee-lead-role">Secretary</span>
+                <span class="committee-lead-name">Segun Omorayewa, FCA</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:40px">
+        <div>
+          <div class="logo"><span class="logo__top" style="color:var(--white)">ICAN UK</span><span
+              class="logo__bottom">DISTRICT SOCIETY</span></div>
+          <p style="margin-top:14px;max-width:36ch;line-height:1.6">A not-for-profit district society of the Institute
+            of Chartered Accountants of Nigeria, registered in the United Kingdom. Building professional excellence
+            since 1988.</p>
+        </div>
+        <div>
+          <div class="mono">Navigation</div>
+          <div style="margin-top:14px;display:grid;gap:8px;font-size:.9rem">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="district-structure.html">District Structure</a>
+            <a href="committees.html">Committees</a>
+            <a href="executive.html">Executive Team</a>
+            <a href="past-chairs.html">Past Chairs</a>
+            <a href="conference.html">Conference</a>
+          </div>
+        </div>
+        <div>
+          <div class="mono">Official Secretariat</div>
+          <div style="margin-top:14px;font-size:.9rem;line-height:1.6">
+            Coker Isah &amp; Coker; 74 Church Road<br />Crystal Palace, London. SE19 2EZ<br />
+            generalsecretary@ican-uk.org<br />
+            +44 7535 230 605, +44 7894 069 959
+          </div>
+          <div style="margin-top:18px;display:flex;gap:10px">
+            <span class="chip">LinkedIn</span>
+            <span class="chip">X</span>
+          </div>
+        </div>
+      </div>
+      <div
+        style="margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem">
+        <span>© 2026 ICAN UK &amp; District Society. All rights reserved.</span>
+        <span>Built with official records from ican-uk.org</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const navBackdrop = document.getElementById('navBackdrop');
+
+    if(navToggle && mobileNav && navBackdrop) {
+      function toggleNav() {
+        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isOpen);
+        mobileNav.setAttribute('aria-hidden', isOpen);
+        mobileNav.classList.toggle('is-open', !isOpen);
+        navBackdrop.classList.toggle('is-open', !isOpen);
+      }
+      navToggle.addEventListener('click', toggleNav);
+      navBackdrop.addEventListener('click', toggleNav);
+    }
+
+    // Committee category filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.committee-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const f = btn.dataset.filter;
+
+        cards.forEach(card => {
+          if(f === 'all' || card.dataset.category === f) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/feedback-widget.js"></script>
+  <script src="js/chatbot-widget.js"></script>
+</body>
+</html>

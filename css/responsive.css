@@ -1,0 +1,357 @@
+/* responsive.css */
+/* Base small-screen adjustments */
+@media(max-width:1100px) {
+  .hero-title {
+    max-width: 600px
+  }
+
+  .hero-content {
+    padding-top: 128px
+  }
+
+  .network-node--uk {
+    left: 6%
+  }
+
+  .network-node--ng {
+    right: 6%
+  }
+}
+
+/* Mobile layout and hamburger menu */
+.nav-toggle {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 2200
+}
+
+/* Off-canvas mobile nav (available at all widths so hamburger works when shown) */
+/* place the panel below the fixed header and make contents larger and tappable */
+.mobile-nav {
+  position: fixed;
+  right: 0;
+  top: 76px;
+  height: calc(100% - 76px);
+  width: 360px;
+  max-width: 86vw;
+  padding: 26px 22px;
+  background: var(--white);
+  box-shadow: -12px 0 40px rgba(0, 0, 0, .18);
+  transform: translateX(100%);
+  transition: transform .28s cubic-bezier(.2, .9, .3, 1);
+  z-index: 1200;
+  overflow-y: auto;
+  display: block;
+  box-sizing: border-box
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 16px 6px;
+  font-size: 1.14rem;
+  color: var(--ink);
+  line-height: 1.4
+}
+
+.mobile-nav .btn {
+  margin-top: 18px;
+  padding: 12px 16px
+}
+
+.mobile-nav.open {
+  transform: translateX(0)
+}
+
+.mobile-nav .close-hint {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: .95rem;
+  color: var(--muted)
+}
+
+.mobile-nav .close-hint::after {
+  content: 'Click outside or tap here to close';
+  display: block;
+  font-size: .75rem;
+  color: var(--muted);
+  margin-top: 6px
+}
+
+@media(max-width:900px) {
+
+  html,
+  body {
+    overflow-x: hidden
+  }
+
+  .header__inner {
+    width: min(calc(100% - 20px), var(--container));
+    position: relative
+  }
+
+  /* hide desktop nav, show a toggle button instead */
+  .nav {
+    display: none
+  }
+
+  .nav-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    margin-left: auto;
+    z-index: 2200
+  }
+
+  .hamburger {
+    width: 22px;
+    height: 2px;
+    background: var(--ink);
+    position: relative;
+    display: block;
+    border-radius: 2px
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--ink);
+    transition: transform .22s ease, opacity .22s, top .22s
+  }
+
+  .hamburger::before {
+    top: -7px
+  }
+
+  .hamburger::after {
+    top: 7px
+  }
+
+  /* Hamburger -> X when open */
+  .nav-toggle.is-open .hamburger {
+    background: transparent
+  }
+
+  .nav-toggle.is-open .hamburger::before {
+    transform: rotate(45deg);
+    top: 0
+  }
+
+  .nav-toggle.is-open .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0
+  }
+
+  /* hide desktop nav when mobile panel is open */
+  .nav-toggle.is-open+.nav {
+    display: none !important
+  }
+
+  /* backdrop */
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .42);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .28s ease;
+    z-index: 1100
+  }
+
+  .nav-backdrop.visible {
+    opacity: 1;
+    pointer-events: auto
+  }
+
+  /* mobile nav panel (off-canvas) */
+  .mobile-nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 86vw;
+    padding: 80px 20px;
+    background: var(--white);
+    box-shadow: -12px 0 30px rgba(0, 0, 0, .12);
+    transform: translateX(100%);
+    transition: transform .28s cubic-bezier(.2, .9, .3, 1);
+    z-index: 1200;
+    overflow-y: auto
+  }
+
+  .mobile-nav a {
+    display: block;
+    padding: 14px 0;
+    font-size: 1.05rem;
+    color: var(--ink)
+  }
+
+  .mobile-nav .btn {
+    margin-top: 12px
+  }
+
+  .mobile-nav.open {
+    transform: translateX(0)
+  }
+
+  .mobile-nav .close-hint {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: .85rem;
+    color: var(--muted)
+  }
+
+  .hero {
+    min-height: 92svh
+  }
+
+  .hero-scene {
+    opacity: .9
+  }
+
+  .hero-stats {
+    gap: 20px
+  }
+
+  .about-metrics {
+    grid-template-columns: 1fr
+  }
+
+  .event-hero {
+    grid-template-columns: 1fr
+  }
+
+  .portal {
+    height: 480px
+  }
+
+  /* Make the Objectives constellation stack cleanly on small screens */
+  .constellation {
+    display: block;
+    padding: 18px;
+    height: auto !important;
+    perspective: none
+  }
+
+  .const-line {
+    display: none
+  }
+
+  /* Stack nodes and place card above the dot so the card "moves straight up" on mobile */
+  .obj-node {
+    position: relative;
+    margin: 14px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 8px
+  }
+
+  .obj-node__card {
+    box-shadow: 0 8px 24px rgba(17, 24, 32, .06);
+    padding: 14px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    width: 100%
+  }
+
+  .obj-node__title {
+    font-size: 1.05rem
+  }
+
+  .obj-node__dot {
+    width: 12px;
+    height: 12px;
+    margin: 6px 0;
+    border-radius: 50%;
+    background: var(--brass);
+    box-shadow: 0 0 14px var(--brass)
+  }
+
+  /* show all objective text on small screens so content isn't hidden */
+  .obj-node__text {
+    font-size: .95rem;
+    color: var(--muted);
+    max-height: 1200px;
+    opacity: 1
+  }
+
+  /* footer overflow protection */
+  .footer {
+    overflow: hidden
+  }
+
+  /* make footer grid responsive */
+  .footer .container>div {
+    min-width: 0
+  }
+
+  .footer .container {
+    overflow: hidden
+  }
+
+  .footer .container a {
+    word-break: break-word
+  }
+
+  @media(max-width:600px) {
+    .footer .container {
+      display: block
+    }
+
+    .footer .container>div {
+      margin-bottom: 20px
+    }
+
+    .regi-div {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important
+  }
+
+  .core-ring--outer,
+  .core-ring--inner,
+  .portal-ring,
+  .data-particle,
+  .event-light {
+    animation: none !important
+  }
+
+  .ican-core,
+  .network,
+  .scene-front {
+    transform: none !important
+  }
+
+  #three-canvas {
+    display: none !important
+  }
+}

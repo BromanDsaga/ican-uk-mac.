@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frequently Asked Questions (FAQ) — ICAN UK &amp; District Society</title>
+  <meta name="description"
+    content="Official FAQ answering member questions regarding website registration, password recovery, profile updates, UK membership transfer, CPD, and the Benevolent Fund." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <meta name="color-scheme" content="dark light" />
+  <style>
+    .faq-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .faq-card {
+      background: var(--white);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-card.is-open {
+      border-color: var(--green);
+    }
+    .faq-trigger {
+      width: 100%;
+      text-align: left;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-trigger:hover {
+      color: var(--green);
+    }
+    .faq-icon {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--brass);
+      transition: transform 0.2s;
+    }
+    .faq-card.is-open .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-content {
+      display: none;
+      padding: 0 24px 24px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.65;
+      border-top: 1px solid var(--border-light);
+      margin-top: 4px;
+      padding-top: 16px;
+    }
+    .faq-card.is-open .faq-content {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="ICAN UK Logo" class="logo-img" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" title="Menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="district-structure.html">District Structure</a>
+        <a href="committees.html">Committees</a>
+        <a href="executive.html">Executive Team</a>
+        <a href="publications.html">Publications</a>
+        <a href="faq.html" class="is-active" style="color:var(--green);font-weight:700">FAQ</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="conference.html">Conference</a>
+        <a href="index.html#members" class="btn btn--brass" style="padding:10px 18px">Member Portal</a>
+      </nav>
+
+      <div class="mobile-nav" id="mobileNav" aria-hidden="true" tabindex="-1">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="district-structure.html">District Structure</a>
+        <a href="committees.html">Committees</a>
+        <a href="executive.html">Executive Team</a>
+        <a href="publications.html">Publications</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="conference.html">Conference</a>
+        <a href="index.html#members" class="btn btn--brass">Member Portal</a>
+      </div>
+      <div class="nav-backdrop" id="navBackdrop" aria-hidden="true" tabindex="-1"></div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__content">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a> <span>/</span> <span>Help Center</span> <span>/</span> <span>FAQ</span>
+        </div>
+        <h1 class="page-title">FREQUENTLY ASKED QUESTIONS</h1>
+        <p class="page-subtitle">
+          Find clear answers to common questions regarding District membership, member portal access, registration approval, password resets, CPD requirements, and the Benevolent Fund.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main class="section" style="padding-top:48px;background:var(--bg)">
+    <div class="container">
+
+      <section class="content-box">
+        <div class="content-box__header">
+          <div>
+            <div class="content-box__kicker">Deliverable #19 • Member Guidance</div>
+            <h2 class="content-box__title">Portal &amp; Membership FAQs</h2>
+          </div>
+          <span class="chip" style="color:var(--green);border-color:var(--green)">Certified Answers</span>
+        </div>
+
+        <div class="faq-accordion" id="faqAccordion">
+
+          <!-- FAQ 1 (Verbatim from ican-uk.org/faq) -->
+          <div class="faq-card is-open">
+            <button class="faq-trigger" type="button" aria-expanded="true">
+              <span>How can I recover my password?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>Password recovery can be performed by completing the following steps:</p>
+              <ol style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:6px">
+                <li>Click on <strong>LOGIN to ICAN-UK</strong> &gt;&gt; <strong>LOGIN TO My ICAN-UK</strong>.</li>
+                <li>Click on <strong>Forgot Password</strong>.</li>
+                <li>Enter the details requested — usually your <strong>Year of Induction</strong> and click proceed.</li>
+                <li>Answer your security question to recover your password.</li>
+              </ol>
+              <p>Your login details will be sent automatically to your registered email address. If you don't receive the email from the system for any reason, please contact the General Secretary via <a href="mailto:generalsecretary@ican-uk.org" style="color:var(--green);font-weight:600">generalsecretary@ican-uk.org</a> or via the telephone numbers provided on the contact page (+44 7535 230 605, +44 7894 069 959).</p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 (Verbatim from ican-uk.org/faq) -->
+          <div class="faq-card">
+            <button class="faq-trigger" type="button" aria-expanded="false">
+              <span>How can I register on the Website?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>Registration on the ICAN-UK website is <strong>strictly meant for ICAN Members ordinarily residing in the United Kingdom</strong>.</p>
+              <p style="margin-top:8px">Registration on the website is subject to approval from the District Secretariat. The login details to the Member's Area will be supplied upon Registration Approval.</p>
+              <p style="margin-top:8px">If you don't receive an email from the system after approval for any reason, please contact the General Secretary via <a href="mailto:generalsecretary@ican-uk.org" style="color:var(--green);font-weight:600">generalsecretary@ican-uk.org</a> or call +44 7535 230 605 / +44 7894 069 959.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 (Verbatim from ican-uk.org/faq) -->
+          <div class="faq-card">
+            <button class="faq-trigger" type="button" aria-expanded="false">
+              <span>How can I update my profile?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>Registered members can update their contact details, employer, address, and email by completing the following steps:</p>
+              <ol style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:6px">
+                <li>Login to the Member's Area via the 'Login to ICAN-UK' tab on the website or from the homepage navigate to <strong>LOGIN to ICAN-UK &gt;&gt; Login to My ICAN-UK</strong>.</li>
+                <li>Click on <strong>My Profile</strong>.</li>
+                <li>Review and edit your professional details, contact phone, and practice firm.</li>
+                <li>Click <strong>Save Changes</strong> to update the central directory.</li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-card">
+            <button class="faq-trigger" type="button" aria-expanded="false">
+              <span>What are the membership categories within the UK District?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>As set out in our constitution (<a href="about.html#who-we-are" style="color:var(--green);font-weight:600">About ICAN UK</a>), membership comprises:</p>
+              <ul style="margin:10px 0 10px 20px;display:flex;flex-direction:column;gap:6px">
+                <li><strong>Fellows of The Institute (FCA):</strong> Continuous practice for 5 years or 10 years as an Associate.</li>
+                <li><strong>Associate Members (ACA):</strong> Fully qualified through ICAN examinations and formal induction.</li>
+                <li><strong>Affiliate Members:</strong> Members of recognized professional accountancy bodies residing in the UK/Ireland.</li>
+                <li><strong>Student Members:</strong> Registered students actively pursuing ICAN professional qualifications.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-card">
+            <button class="faq-trigger" type="button" aria-expanded="false">
+              <span>How are Continuing Professional Development (CPD) hours tracked?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>The Technical, CCAB &amp; Skills Committee organizes accredited technical sessions and masterclasses. Attendance at monthly general meetings and the flagship Annual International Accountants' Conference generates verifiable CPD hours recognized by ICAN National Council and CCAB reciprocal bodies.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-card">
+            <button class="faq-trigger" type="button" aria-expanded="false">
+              <span>Who qualifies for assistance from the ICAN UK Benevolent Fund?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>The Benevolent Fund was founded in 2014 to support members and their dependent families in times of severe illness, bereavement, acute hardship, or relocation distress. All applications are treated under strict confidentiality by the Welfare Board Trustees. See <a href="benevolent-fund.html" style="color:var(--green);font-weight:600">Benevolent Fund Details &amp; Form</a>.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- STILL HAVE QUESTIONS -->
+      <section class="content-box" style="margin-top:36px;text-align:center">
+        <h3 style="font-size:1.4rem;color:var(--ink)">Still Have Questions?</h3>
+        <p style="color:var(--muted);margin:8px 0 20px">Our secretariat team is here to assist you with any specific queries.</p>
+        <a href="contact.html" class="btn btn--brass">Contact General Secretariat →</a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:40px">
+        <div>
+          <div class="logo"><span class="logo__top" style="color:var(--white)">ICAN UK</span><span
+              class="logo__bottom">DISTRICT SOCIETY</span></div>
+          <p style="margin-top:14px;max-width:36ch;line-height:1.6">A not-for-profit district society of the Institute
+            of Chartered Accountants of Nigeria, registered in the United Kingdom. Building professional excellence
+            since 1988.</p>
+        </div>
+        <div>
+          <div class="mono">Navigation</div>
+          <div style="margin-top:14px;display:grid;gap:8px;font-size:.9rem">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="district-structure.html">District Structure</a>
+            <a href="committees.html">Committees</a>
+            <a href="executive.html">Executive Team</a>
+            <a href="publications.html">Publications</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="conference.html">Conference</a>
+          </div>
+        </div>
+        <div>
+          <div class="mono">Official Secretariat</div>
+          <div style="margin-top:14px;font-size:.9rem;line-height:1.6">
+            Coker Isah &amp; Coker; 74 Church Road<br />Crystal Palace, London. SE19 2EZ<br />
+            generalsecretary@ican-uk.org<br />
+            +44 7535 230 605, +44 7894 069 959
+          </div>
+          <div style="margin-top:18px;display:flex;gap:10px">
+            <span class="chip">LinkedIn</span>
+            <span class="chip">X</span>
+          </div>
+        </div>
+      </div>
+      <div
+        style="margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;flex-wrap:gap:12px;font-size:.78rem">
+        <span>© 2026 ICAN UK &amp; District Society. All rights reserved.</span>
+        <span>Built with official records from ican-uk.org</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const navBackdrop = document.getElementById('navBackdrop');
+
+    if(navToggle && mobileNav && navBackdrop) {
+      function toggleNav() {
+        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isOpen);
+        mobileNav.setAttribute('aria-hidden', isOpen);
+        mobileNav.classList.toggle('is-open', !isOpen);
+        navBackdrop.classList.toggle('is-open', !isOpen);
+      }
+      navToggle.addEventListener('click', toggleNav);
+      navBackdrop.addEventListener('click', toggleNav);
+    }
+
+    // Accordion toggle
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const card = trigger.parentElement;
+        const isOpen = card.classList.contains('is-open');
+        card.classList.toggle('is-open', !isOpen);
+        trigger.setAttribute('aria-expanded', !isOpen);
+      });
+    });
+  </script>
+
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/feedback-widget.js"></script>
+  <script src="js/chatbot-widget.js"></script>
+</body>
+</html>

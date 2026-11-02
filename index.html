@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ICAN UK & District Society — The Future of Finance, Grounded in Heritage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/3d.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/widgets.css" />
+  <meta name="color-scheme" content="dark light" />
+
+  <style>
+    /* MAC SAFARI FIX: Ensure content visible if JS modules fail */
+    .js [data-reveal] { opacity: 0; transform: translateY(24px); }
+    .js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+    /* If JS is disabled or modules fail, show content */
+    html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important; }
+    /* Fallback after 3s */
+    @media (prefers-reduced-motion: no-preference) {
+      [data-reveal] { transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">
+        <!-- DEVELOPER: Replace with your logo - supports PNG, SVG, JPG. Recommended height 42px -->
+        <img src="images/logo.jpg" alt="ICAN UK Logo" class="logo-img"
+          />
+        <!-- <div class="logo-text" id="logoFallback">
+          <span class="logo__top">ICAN UK</span>
+          <span class="logo__bottom">DISTRICT SOCIETY</span>
+        </div> -->
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" title="Menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <!-- <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark"><span id="themeIcon">🌙</span></button> -->
+        <a href="#about">About</a>
+        <a href="#history">History</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#objectives">Objectives</a>
+        <a href="conference.html">Conference</a>
+        <a href="conference.html#agenda">Events</a>
+        <a href="#members" class="btn btn--brass" style="padding:10px 18px">Member Portal</a>
+      </nav>
+
+      <div class="mobile-nav" id="mobileNav" aria-hidden="true" tabindex="-1">
+        <a href="#about">About</a>
+        <a href="#history">History</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#objectives">Objectives</a>
+        <a href="conference.html">Conference</a>
+        <a href="conference.html#agenda">Events</a>
+        <a href="#members" class="btn btn--brass">Member Portal</a>
+      </div>
+      <div class="nav-backdrop" id="navBackdrop" aria-hidden="true" tabindex="-1"></div>
+    </div>
+  </header>
+
+  <!-- HERO - CSS 3D Stage -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-scene">
+      <div class="scene-back"></div>
+      <canvas id="three-canvas" aria-hidden="true"></canvas>
+      <div class="hero-world">
+        <div class="network" aria-hidden="true">
+          <div class="network-line network-line--primary"></div>
+          <div class="network-line network-line--secondary"></div>
+          <div class="network-node network-node--uk"><span>UK</span></div>
+          <div class="network-node network-node--ldn"><span>LONDON</span></div>
+          <!-- <div class="network-node network-node--lag"><span>LAGOS</span></div> -->
+          <div class="network-node network-node--ng"><span>NIGERIA</span></div>
+        </div>
+        <div class="ican-core" aria-hidden="true">
+          <div class="core-ring core-ring--outer"></div>
+          <div class="core-ring core-ring--middle"></div>
+          <div class="core-ring core-ring--inner"></div>
+          <div class="core-face">
+            <div><span>ICAN</span><small>UK & DISTRICT</small></div>
+          </div>
+          <div class="core-light"></div>
+        </div>
+        <div class="scene-front" aria-hidden="true">
+          <span class="data-particle"></span><span class="data-particle"></span><span class="data-particle"></span><span
+            class="data-particle"></span>
+          <span class="data-particle"></span><span class="data-particle"></span><span class="data-particle"></span><span
+            class="data-particle"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-kicker">
+        <div class=""></div><span>Est. 1988 — London • Nigeria • Nationwide</span>
+      </div>
+      <h1 class="hero-title">THE<br>FOREMOST<br><em>INTERNATIONAL</em><br>DISTRICT</h1>
+      <p class="hero-sub">ICAN UK & District Society connects over 550 Chartered Accountants across the United Kingdom —
+        a bridge between heritage and innovation, Nigeria and the UK, standards and community.</p>
+      <div class="hero-actions">
+        <a href="#members" class="btn btn--brass">Become a Member →</a>
+        <a href="#about" class="btn btn--ghost">Explore Our Story</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat__num">30<span>+</span></div>
+          <div class="stat__label">Years of Heritage</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">550<span>+</span></div>
+          <div class="stat__label">Members UK-wide</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">12<span>+</span></div>
+          <div class="stat__label">Annual Programmes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT - Ivory editorial -->
+  <section id="about" class="section ivory">
+    <div class="container">
+      <div class="section-label">About ICAN UK</div>
+      <div class="about-grid" style="margin-top:28px">
+        <div data-reveal>
+          <h2 class="about-big"><span>30+ YEARS</span> OF PROFESSIONAL EXCELLENCE</h2>
+          <div class="about-metrics">
+            <div class="metric">
+              <div class="metric__n">1988</div>
+              <div class="metric__l">Founded in London</div>
+            </div>
+            <div class="metric">
+              <div class="metric__n">550+</div>
+              <div class="metric__l">Chartered Members</div>
+            </div>
+            <div class="metric">
+              <div class="metric__n">UK × NG</div>
+              <div class="metric__l">Bridge Network</div>
+            </div>
+            <div class="metric">
+              <div class="metric__n">100%</div>
+              <div class="metric__l">Not-for-Profit</div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal style="transition-delay:.12s">
+          <p class="about-text">The Institute of Chartered Accountants of Nigeria — UK & District Society is a
+            distinguished professional community. We represent, support and elevate Nigerian chartered accountants
+            living and working in the United Kingdom.</p>
+          <p class="about-text" style="margin-top:18px">Our work spans professional development, ethical standards,
+            welfare, representation and cultural connection — grounded in the rigorous heritage of ICAN and shaped for a
+            modern global economy. We are both institutional and human, premium and approachable.</p>
+          <div style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap">
+            <span class="chip" style="color:var(--ink);border-color:rgba(17,24,32,.15)">Chartered Accountants Act
+              1965</span>
+            <span class="chip" style="color:var(--ink);border-color:rgba(17,24,32,.15)">London District</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section id="history" class="section" style="background:var(--white)">
+    <div class="container">
+      <div class="section-label">Our Heritage</div>
+      <h2 data-reveal style="margin-top:20px;font-size:clamp(2rem,4vw,3.4rem);max-width:680px">A TIMELINE OF PURPOSE,
+        FROM LONDON TO LAGOS.</h2>
+
+      <div class="timeline-track" data-reveal>
+        <div class="timeline-line"></div>
+        <div class="timeline-controls">
+          <button class="timeline-btn" id="timelinePrev" aria-label="Scroll left">←</button>
+          <button class="timeline-btn" id="timelineNext" aria-label="Scroll right">→</button>
+          <span class="timeline-hint">Drag to scroll • Scroll wheel • Use arrows</span>
+        </div>
+        <div class="timeline-row" id="timelineRow">
+
+          <div class="timeline-node is-active">
+            <div class="timeline-node__year">1988</div>
+            <div class="timeline-node__title">Foundation</div>
+            <div class="timeline-node__desc">ICAN UK District formed by pioneering chartered accountants in London
+              seeking community and standards abroad.</div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-node__year">1990</div>
+            <div class="timeline-node__title">First Chapter Meeting</div>
+            <div class="timeline-node__desc">Inaugural formal gathering establishes constitution, welfare fund and
+              student support programme.</div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-node__year">1991</div>
+            <div class="timeline-node__title">UK Recognition</div>
+            <div class="timeline-node__desc">Formal district recognition and alignment with ICAN Nigeria global
+              strategy.</div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-node__year">2005</div>
+            <div class="timeline-node__title">Expansion</div>
+            <div class="timeline-node__desc">Membership grows beyond London — Manchester, Birmingham, Scotland chapters
+              activated.</div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-node__year">2018</div>
+            <div class="timeline-node__title">Digital Era</div>
+            <div class="timeline-node__desc">Launch of magazine, CPD portal and cross-border professional development
+              series.</div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-node__year">TODAY</div>
+            <div class="timeline-node__title">550+ Strong</div>
+            <div class="timeline-node__desc">A respected institution with deep heritage, modern vision and active
+              contribution to UK finance.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- LEADERSHIP - FIXED PHOTO FIT, NO CROPPING, BRIGHT -->
+  <section id="leadership" class="section" style="background:var(--bg)">
+    <div class="container">
+      <div class="section-label">Executive Committee</div>
+      <h2 data-reveal style="margin-top:20px;font-size:clamp(2rem,4vw,3.4rem)">LEADERSHIP GROUNDED IN SERVICE.</h2>
+      <div class="leaders">
+        <article class="leader-card" data-reveal>
+          <div class="leader-card__top"><span class="leader-card__role">Chairman</span><span class="chip">Chair</span>
+          </div>
+          <div class="leader-card__avatar">
+            <img class="avatar-img" src="images/executive/chairman.jpeg" alt="Dr. Akinola O." loading="lazy"
+              onerror="this.style.display='none'" />
+            <span class="avatar-initials">AO</span>
+          </div>
+          <div class="leader-card__content">
+            <div class="leader-card__name">Dr. Akinola O.</div>
+            <div class="leader-card__bio">FCA, 20+ years UK practice. Leads strategy and representation at ICAN global
+              forums.</div>
+            <div class="leader-card__foot"><span class="chip">Governance</span><span class="chip">Strategy</span></div>
+          </div>
+        </article>
+        <article class="leader-card" data-reveal style="transition-delay:.06s">
+          <div class="leader-card__top"><span class="leader-card__role">Vice Chairman</span></div>
+          <div class="leader-card__avatar">
+            <img class="avatar-img" src="images/executive/vice-chairman.jpeg" alt="Chiamaka E." loading="lazy"
+              onerror="this.style.display='none'" />
+            <span class="avatar-initials">CE</span>
+          </div>
+          <div class="leader-card__content">
+            <div class="leader-card__name">Chiamaka E.</div>
+            <div class="leader-card__bio">Focus on professional development, CPD accreditation and next-gen talent
+              pipeline.</div>
+            <div class="leader-card__foot"><span class="chip">CPD</span><span class="chip">Mentoring</span></div>
+          </div>
+        </article>
+        <article class="leader-card" data-reveal style="transition-delay:.12s">
+          <div class="leader-card__top"><span class="leader-card__role">General Secretary</span></div>
+          <div class="leader-card__avatar">
+            <img class="avatar-img" src="images/executive/general-secretary.jpeg" alt="Ibrahim B." loading="lazy"
+              onerror="this.style.display='none'" />
+            <span class="avatar-initials">IB</span>
+          </div>
+          <div class="leader-card__content">
+            <div class="leader-card__name">Ibrahim B.</div>
+            <div class="leader-card__bio">Custodian of records, member communications and cross-district coordination.
+            </div>
+            <div class="leader-card__foot"><span class="chip">Operations</span></div>
+          </div>
+        </article>
+        <article class="leader-card" data-reveal>
+          <div class="leader-card__top"><span class="leader-card__role">Treasurer</span></div>
+          <div class="leader-card__avatar">
+            <img class="avatar-img" src="images/executive/treasurer.jpeg" alt="Sade O." loading="lazy"
+              onerror="this.style.display='none'" />
+            <span class="avatar-initials">SO</span>
+          </div>
+          <div class="leader-card__content">
+            <div class="leader-card__name">Sade O.</div>
+            <div class="leader-card__bio">Fellow with Big Four background. Financial stewardship and transparency.</div>
+            <div class="leader-card__foot"><span class="chip">Finance</span></div>
+          </div>
+        </article>
+        <article class="leader-card" data-reveal style="transition-delay:.06s">
+          <div class="leader-card__top"><span class="leader-card__role">Publicity Secretary</span></div>
+          <div class="leader-card__avatar">
+            <img class="avatar-img" src="images/executive/deputy-vice-chairman.jpeg" alt="Tunde K."
+              loading="lazy" onerror="this.style.display='none'" />
+            <span class="avatar-initials">TK</span>
+          </div>
+          <div class="leader-card__content">
+            <div class="leader-card__name">Tunde K.</div>
+            <div class="leader-card__bio">Editor of district magazine, events promotion and public engagement.</div>
+            <div class="leader-card__foot"><span class="chip">Media</span></div>
+          </div>
+        </article>
+        <article class="leader-card" data-reveal style="transition-delay:.12s">
+          <div class="leader-card__top"><span class="leader-card__role">Welfare Officer</span></div>
+          <div class="leader-card__avatar">
+            <img class="avatar-img" src="images/executive/social-secretary.jpeg" alt="Ngozi M." loading="lazy"
+              onerror="this.style.display='none'" />
+            <span class="avatar-initials">NM</span>
+          </div>
+          <div class="leader-card__content">
+            <div class="leader-card__name">Ngozi M.</div>
+            <div class="leader-card__bio">Member wellbeing, benevolence fund and integration support for new arrivals.
+            </div>
+            <div class="leader-card__foot"><span class="chip">Welfare</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- OBJECTIVES -->
+  <section id="objectives" class="section" style="background:var(--paper-warm)">
+    <div class="container">
+      <div class="section-label">Aims & Objectives</div>
+      <h2 data-reveal style="margin-top:20px;font-size:clamp(2rem,4vw,3.2rem);max-width:720px">FROM PEOPLE TO PURPOSE —
+        FOUR PILLARS THAT HOLD US.</h2>
+      <div class="constellation" data-reveal>
+        <div class="const-line" style="width:220px;top:38%;left:38%;transform:rotate(-28deg)"></div>
+        <div class="const-line" style="width:220px;top:38%;left:52%;transform:rotate(28deg)"></div>
+        <div class="const-line" style="width:200px;top:58%;left:42%;transform:rotate(28deg)"></div>
+        <div class="const-line" style="width:200px;top:58%;left:52%;transform:rotate(-28deg)"></div>
+
+        <div class="obj-node obj-node--standards is-active">
+          <div class="obj-node__dot"></div>
+          <div class="obj-node__card">
+            <div class="obj-node__title">STANDARDS</div>
+            <div class="obj-node__text">Upholding ICAN ethical codes, technical excellence and continuous professional
+              development for members in the UK.</div>
+          </div>
+        </div>
+        <div class="obj-node obj-node--welfare">
+          <div class="obj-node__dot" style="background:var(--stone)"></div>
+          <div class="obj-node__card">
+            <div class="obj-node__title">WELFARE</div>
+            <div class="obj-node__text">Benevolence, integration support, career guidance and a safety net for members
+              and families.</div>
+          </div>
+        </div>
+        <div class="obj-node obj-node--rep">
+          <div class="obj-node__dot"></div>
+          <div class="obj-node__card">
+            <div class="obj-node__title">REPRESENTATION</div>
+            <div class="obj-node__text">A collective voice for Nigerian chartered accountants in UK policy, finance and
+              professional bodies.</div>
+          </div>
+        </div>
+        <div class="obj-node obj-node--dev">
+          <div class="obj-node__dot"></div>
+          <div class="obj-node__card">
+            <div class="obj-node__title">PROFESSIONAL DEVELOPMENT</div>
+            <div class="obj-node__text">CPD, masterclasses, mentorship and pathways for students to fellowship.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- CONFERENCE — Annual conference details, posters and call to action -->
+  <section id="conference" class="section ivory">
+    <div class="container">
+      <div style="display:flex;flex-direction:column;gap:12px" data-reveal>
+        <div class="section-label" style="color:var(--ink);border-color:rgba(17,24,32,.15)">Conference</div>
+        <h2 style="font-size:clamp(2.2rem,4vw,3.6rem);color:var(--ink);line-height:.95;max-width:720px">OUR ANNUAL INTERNATIONAL
+          ACCOUNTANTS' CONFERENCE</h2>
+        <p style="color:#4a4742;line-height:1.7;max-width:62ch;font-size:.95rem">ICAN UK hosts an annual conference bringing
+          together members, regulators and industry leaders. Each year features keynote presentations, CPD sessions and a
+          gala dinner.</p>
+      </div>
+
+      <div class="conference-grid" data-reveal style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
+        <article class="conf-card">
+          <img src="images/magazine/6thZonalConf2019.jpg" alt="6th Zonal Conference" style="width:100%;height:220px;object-fit:cover;border-radius:6px;" onerror="this.style.display='none'">
+          <div style="padding:10px 6px">
+            <div style="font-weight:700">6th ICAN UK Zonal Conference</div>
+            <div style="color:var(--muted);font-size:.9rem;margin-top:6px">Theme: Effective Institutions & Technology</div>
+          </div>
+        </article>
+        <article class="conf-card">
+          <img src="images/magazine/7thIntlConfMarch2020.jpg" alt="7th Intl Conf" style="width:100%;height:220px;object-fit:cover;border-radius:6px;" onerror="this.style.display='none'">
+          <div style="padding:10px 6px">
+            <div style="font-weight:700">7th ICAN UK Intl Conference</div>
+            <div style="color:var(--muted);font-size:.9rem;margin-top:6px">Theme: Free Trade Area — Digital Economy</div>
+          </div>
+        </article>
+        <article class="conf-card">
+          <img src="images/magazine/ICAN UK 2022 Conference Magazine.jpg" alt="2022 Conference" style="width:100%;height:220px;object-fit:cover;border-radius:6px;" onerror="this.style.display='none'">
+          <div style="padding:10px 6px">
+            <div style="font-weight:700">ICAN UK International Conference — 2022</div>
+            <div style="color:var(--muted);font-size:.9rem;margin-top:6px">Annual meeting with CPD, networking and awards.</div>
+          </div>
+        </article>
+      </div>
+
+      <div style="margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <a class="btn btn--brass" href="conference.html#agenda">View Next Conference</a>
+        <a class="btn btn--ghost" href="#members">Sponsor / Exhibitor Info</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- EVENTS -->
+  <section id="events" class="section" style="background:var(--white)">
+    <div class="container">
+      <div class="section-label">Events</div>
+      <div class="event-hero">
+        <div class="event-num" data-reveal>03</div>
+        <div data-reveal style="transition-delay:.1s">
+          <div class="mono">Next Gathering — London</div>
+          <h2 style="margin-top:10px;font-size:clamp(1.8rem,3.5vw,2.8rem);max-width:640px">ANNUAL CONFERENCE & DINNER:
+            HERITAGE, INNOVATION, IMPACT.</h2>
+          <p style="margin-top:12px;color:var(--muted);max-width:56ch;line-height:1.6">An evening of CPD, keynote,
+            recognition awards and community. Guest speakers from Big Four, HMRC policy and ICAN Nigeria leadership.</p>
+          <div class="countdown" id="countdown"></div>
+          <div style="margin-top:28px;display:flex;gap:12px"><a class="btn btn--brass" href="#">Register for Conference 2026</a><a
+              class="btn btn--ghost" href="conference.html#agenda">View Programme</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="event-light"
+      style="position:absolute;right:8%;top:22%;width:280px;height:280px;background:radial-gradient(circle, rgba(176,149,99,.14), transparent 70%);border-radius:50%;pointer-events:none">
+    </div>
+  </section>
+
+  <!-- MEMBER HUB -->
+  <section id="members" class="section"
+    style="background:radial-gradient(80% 80% at 50% 10%, #FFFEFB 0%, var(--paper-warm) 60%)">
+    <div class="container">
+      <div style="text-align:center;max-width:720px;margin-inline:auto" data-reveal>
+        <div class="section-label" style="margin-inline:auto">Member Resource Hub</div>
+        <h2 style="margin-top:18px;font-size:clamp(2rem,4vw,3.6rem)">BELONGING — ACCESS YOUR PROFESSIONAL HOME.</h2>
+        <p style="margin-top:14px;color:var(--muted);line-height:1.6">CPD certificates, directory, benevolence forms,
+          magazine archive and mentorship matching — one portal.</p>
+      </div>
+      <div class="portal" data-reveal>
+        <div class="portal-ring"></div>
+        <div class="portal-ring portal-ring--2"></div>
+        <div class="portal-ring portal-ring--3"></div>
+        <div class="portal-card">
+          <div
+            style="width:46px;height:46px;border-radius:50%;background:var(--brass);color:var(--ink);display:grid;place-items:center;margin-inline:auto;font-weight:700">
+            ICAN</div>
+          <h3 style="margin-top:14px;font-size:1.4rem">MEMBER HUB</h3>
+          <p style="margin-top:8px;font-size:.9rem;color:var(--muted);line-height:1.5">Secure access for verified
+            members. CPD tracking, events, welfare, community.</p>
+          <div style="margin-top:18px;display:flex;gap:10px;justify-content:center"><a class="btn btn--brass"
+              style="padding:12px 18px" href="#">Enter Portal</a></div>
+          <div
+            style="margin-top:14px;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">
+            SSO • FCA Verified • Encrypted</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA - loop back to core -->
+  <section class="section"
+    style="text-align:center;padding:160px 0 120px;background:radial-gradient(70% 70% at 50% 0%, #244E3B 0%, #17242D 65%);color:white"
+    (70% 70% at 50% 0%, #203645 0%, var(--ink) 65%)">
+    <div class="container" data-reveal>
+      <div
+        style="position:relative;width:220px;height:220px;margin-inline:auto;perspective:800px;transform-style:preserve-3d;margin-bottom:32px">
+        <div class="core-ring core-ring--outer" style="position:absolute;inset:0"></div>
+        <div class="core-face" style="position:absolute;inset:22%">
+          <div><span style="font-size:1.8rem">ICAN</span><small>UK & DISTRICT</small></div>
+        </div>
+      </div>
+      <h2 style="font-size:clamp(2.2rem,5vw,4.2rem);max-width:760px;margin-inline:auto;color:white">IDENTITY, COMMUNITY,
+        FUTURE — JOIN US.</h2>
+      <p style="margin-top:16px;color:var(--muted);max-width:52ch;margin-inline:auto;line-height:1.6">Whether you are
+        newly qualified in London or a Fellow with decades of impact, there is a home for you here. Standards. Welfare.
+        Representation. Development.</p>
+      <div style="margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn--brass"
+          href="#">Apply for Membership</a><a class="btn btn--ghost" href="#">Talk to Welfare Officer</a></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:40px">
+        <div>
+          <div class="logo"><span class="logo__top" style="color:var(--white)">ICAN UK</span><span
+              class="logo__bottom">DISTRICT SOCIETY</span></div>
+          <p style="margin-top:14px;max-width:36ch;line-height:1.6">A not-for-profit district society of the Institute
+            of Chartered Accountants of Nigeria, registered in the United Kingdom. Building professional excellence
+            since 1988.</p>
+        </div>
+        <div>
+          <div class="mono">Sections</div>
+          <div style="margin-top:14px;display:grid;gap:8px;font-size:.9rem"><a href="#about">About</a><a
+              href="#history">History</a><a href="#leadership">Leadership</a><a href="#objectives">Objectives</a><a
+              href="conference.html">Conference</a><a href="conference.html#agenda">Events</a></div>
+        </div>
+        <div>
+          <div class="mono">Contact</div>
+          <div style="margin-top:14px;font-size:.9rem;line-height:1.6">London, United
+            Kingdom<br />members@icanuk.org.uk<br />+44 (0)20 XXXX XXXX</div>
+          <div style="margin-top:18px;display:flex;gap:10px"><span class="chip">LinkedIn</span><span
+              class="chip">X</span></div>
+        </div>
+      </div>
+      <div
+        style="margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem">
+        <span>© 2026 ICAN UK & District Society. All rights reserved.</span><span>Design: Editorial + CSS 3D • Built
+          vanilla.</span></div>
+    </div>
+  </footer>
+
+  <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script>
+    // Early JS detection for CSS fallback - prevents blank page if modules fail on Mac Safari
+    document.documentElement.classList.add('js');
+    // Fallback: if reveal doesn't fire within 2.5s, force show content (Mac Safari file:// safety)
+    setTimeout(function(){
+      document.querySelectorAll('[data-reveal]').forEach(function(el){
+        el.classList.add('is-visible');
+      });
+    }, 2500);
+  </script>
+  <script src="js/main.bundle.js"></script>
+  <script>
+    // Mac Safari: Catch module load errors and force reveal content
+    window.addEventListener('error', function(e){
+      if(e.message && e.message.includes('Failed to load module') || e.message.includes('import')){
+        console.warn('Module load failed (likely Mac Safari file://), forcing content visible');
+        document.querySelectorAll('[data-reveal]').forEach(function(el){ el.classList.add('is-visible'); });
+      }
+    });
+  </script>
+  <script>
+    (function () {
+      const toggle = document.getElementById('themeToggle');
+      const icon = document.getElementById('themeIcon');
+      const htmlEl = document.documentElement;
+      const saved = localStorage.getItem('ican-theme') || 'light';
+      htmlEl.setAttribute('data-theme', saved);
+      if (icon) icon.textContent = saved === 'dark' ? '☀️' : '🌙';
+      toggle?.addEventListener('click', () => {
+        const cur = htmlEl.getAttribute('data-theme');
+        const next = cur === 'dark' ? 'light' : 'dark';
+        htmlEl.setAttribute('data-theme', next);
+        localStorage.setItem('ican-theme', next);
+        if (icon) icon.textContent = next === 'dark' ? '☀️' : '🌙';
+        document.body.animate([{ filter: 'brightness(1)' }, { filter: 'brightness(1.08)' }, { filter: 'brightness(1)' }], { duration: 350, easing: 'ease' });
+      });
+
+      // Mobile nav toggle
+      const navToggle = document.getElementById('navToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const navBackdrop = document.getElementById('navBackdrop');
+      function closeMobileNav() {
+        if (!mobileNav) return;
+        mobileNav.classList.remove('open');
+        if (navToggle) { navToggle.setAttribute('aria-expanded','false'); navToggle.classList.remove('is-open'); }
+        if (navBackdrop) navBackdrop.classList.remove('visible');
+      }
+      function openMobileNav() {
+        if (!mobileNav) return;
+        mobileNav.classList.add('open');
+        if (navToggle) { navToggle.setAttribute('aria-expanded','true'); navToggle.classList.add('is-open'); }
+        if (navBackdrop) navBackdrop.classList.add('visible');
+      }
+      navToggle?.addEventListener('click', () => {
+        if (!mobileNav) return;
+        const open = mobileNav.classList.contains('open');
+        if (open) closeMobileNav(); else openMobileNav();
+      });
+      // Close when clicking outside or on a link
+      document.addEventListener('click', (e) => {
+        if (!mobileNav) return;
+        const target = e.target;
+        if (mobileNav.classList.contains('open') && !mobileNav.contains(target) && !navToggle.contains(target)) {
+          closeMobileNav();
+        }
+      });
+      navBackdrop?.addEventListener('click', closeMobileNav);
+      mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMobileNav()));
+
+      // Adjust the mobile nav to sit below the header dynamically (handles varying header heights)
+      function adjustMobileNavPosition(){
+        try{
+          const header = document.querySelector('.header');
+          const h = header ? header.offsetHeight : 76;
+          if(mobileNav){
+            // make panel full viewport height but push content down by header height so links are visible
+            mobileNav.style.top = '0px';
+            mobileNav.style.height = '100vh';
+            mobileNav.style.paddingTop = h + 'px';
+          }
+          if(navBackdrop){
+            // ensure backdrop covers full viewport; nothing needed here normally
+          }
+        }catch(e){console.warn('adjustMobileNavPosition error',e)}
+      }
+      // call on load and resize
+      adjustMobileNavPosition();
+      window.addEventListener('resize', adjustMobileNavPosition);
+      // ensure position is recalculated when opening
+      const originalOpen = openMobileNav;
+      window.openMobileNav = function(){ adjustMobileNavPosition(); originalOpen(); };
+
+    })();
+  </script>
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/feedback-widget.js"></script>
+  <script src="js/chatbot-widget.js"></script>
+</body>
+
+</html>

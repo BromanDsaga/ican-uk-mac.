@@ -1,0 +1,197 @@
+/* conference-responsive.css - Mobile refinements for conference */
+
+@media(max-width:1100px) {
+  .conf-hero__content {
+    grid-template-columns: 1fr;
+  }
+
+  .conf-hero__visual {
+    /* order: -1; */
+    min-height: 320px;
+    position: relative;
+  }
+}
+
+@media(max-width:980px) {
+  .conf-nav {
+    display: none;
+  }
+
+  .conf-brand__divider {
+    display: none;
+  }
+
+  .conf-strip__inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .venue-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prev-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width:700px) {
+  .conf-header__inner {
+    width: min(calc(100% - 20px), var(--container));
+  }
+
+  .conf-hero {
+    padding-top: 76px;
+  }
+
+  .conf-hero__content {
+    padding: 36px 0 40px;
+    min-height: auto;
+  }
+
+  .conf-hero__title {
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
+  }
+
+  .conf-hero__meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .conf-why,
+  .conf-themes,
+  .conf-audience,
+  .conf-previous,
+  .conf-results,
+  .conf-agenda,
+  .conf-speakers,
+  .conf-pricing,
+  .conf-venue,
+  .conf-logistics,
+  .conf-sponsors,
+  .conf-faq,
+  .conf-final {
+    padding: 80px 0;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .logi-acc {
+    display: grid;
+    grid-template-columns:1fr;
+    gap: 40px;
+  }
+
+  .cpd-feature {
+    padding: 24px;
+  }
+
+  .audience-constellation {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .audience-node {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 90%;
+    text-align: center;
+  }
+
+  .audience-node__desc {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    margin-top: 10px;
+    display: none;
+  }
+
+  .audience-node.is-active .audience-node__desc {
+    display: block;
+    opacity: 1;
+  }
+
+  .audience-line {
+    display: none;
+  }
+
+  .agenda-session {
+    padding: 18px 16px;
+  }
+
+  .speakers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card--featured {
+    transform: none;
+  }
+
+  .prev-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .prev-gallery__main {
+    grid-column: span 1;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .venue-map {
+    aspect-ratio: 1;
+  }
+
+  .conf-final__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .conf-final__actions .btn {
+    width: 100%;
+  }
+
+  .session-drawer {
+    width: 100vw;
+  }
+
+  .speaker-modal__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Scroll progress for conf nav */
+.conf-header .progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--brass);
+  width: calc(var(--scroll-progress, 0) * 100%);
+  transition: width .1s linear;
+}
+
+/* Hide 3D depth on low power */
+@media(max-width:700px) {
+  .conference-core {
+    filter: none;
+  }
+
+  #conf-three-canvas {
+    display: none;
+  }
+}

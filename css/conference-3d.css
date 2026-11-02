@@ -1,0 +1,242 @@
+/* conference-3d.css - Conference Core & 3D Interactions */
+
+.conference-core {
+  position: absolute;
+  left: 62%;
+  top: 50%;
+  width: 420px;
+  aspect-ratio: 1;
+  transform-style: preserve-3d;
+  transform:
+    translate3d(-50%, calc(-50% + var(--scroll-offset, 0px)), var(--conference-depth, 60px)) rotateX(var(--conference-rotate-x, 10deg)) rotateY(var(--conference-rotate-y, -14deg));
+  will-change: transform;
+  filter: drop-shadow(0 24px 70px rgba(0, 0, 0, .55));
+}
+
+@media(max-width:1100px) {
+  .conference-core {
+    left: 50%;
+    top: 62%;
+    width: 340px;
+  }
+}
+
+@media(max-width:700px) {
+  .conference-core {
+    width: 260px;
+    top: 68%;
+  }
+}
+
+.conference-core__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  border: 1.2px solid var(--brass);
+}
+
+.conference-core__ring--outer {
+  box-shadow:
+    0 0 50px rgba(176, 149, 99, .32),
+    0 0 110px rgba(176, 149, 99, .14),
+    inset 0 0 36px rgba(176, 149, 99, .10);
+  background: radial-gradient(circle, rgba(176, 149, 99, .07) 0%, transparent 68%);
+  animation: confFloat 9s ease-in-out infinite;
+}
+
+.conference-core__ring--middle {
+  inset: 13%;
+  border-color: rgba(36, 78, 59, .68);
+  transform: translateZ(36px);
+}
+
+.conference-core__ring--inner {
+  inset: 26%;
+  border-color: rgba(176, 149, 99, .32);
+  border-style: dashed;
+  transform: translateZ(18px);
+  animation: confSpin 84s linear infinite;
+}
+
+@keyframes confFloat {
+
+  0%,
+  100% {
+    transform: translateZ(0) translateY(0);
+  }
+
+  50% {
+    transform: translateZ(0) translateY(-8px);
+  }
+}
+
+@keyframes confSpin {
+  from {
+    transform: translateZ(18px) rotate(0deg);
+  }
+
+  to {
+    transform: translateZ(18px) rotate(360deg);
+  }
+}
+
+.conference-core__face {
+  position: absolute;
+  inset: 20%;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(130% 130% at 30% 26%, #2E4E3E 0%, #1C3327 24%, #121F18 60%, #0E1A14 100%);
+  border: 1.2px solid rgba(176, 149, 99, .58);
+  border-radius: 50%;
+  transform: translateZ(72px);
+  box-shadow:
+    0 32px 90px rgba(0, 0, 0, .62),
+    inset 0 1.5px 1.5px rgba(255, 255, 255, .18),
+    inset 0 -1px 1px rgba(0, 0, 0, .5),
+    0 0 0 1px rgba(176, 149, 99, .22);
+}
+
+.conference-core__face span {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 3.2rem;
+  letter-spacing: .08em;
+  color: #F2EFE7;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, .8), 0 0 28px rgba(176, 149, 99, .28);
+  line-height: .9;
+}
+
+.conference-core__face small {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-body);
+  font-size: .6rem;
+  letter-spacing: .32em;
+  color: var(--brass);
+  text-align: center;
+  font-weight: 700;
+}
+
+.conference-core__orb {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--brass);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--brass), 0 0 22px rgba(176, 149, 99, .5);
+  transform-style: preserve-3d;
+}
+
+.conference-core__orb--1 {
+  left: 8%;
+  top: 22%;
+  transform: translateZ(48px);
+  animation: orbFloat 4.2s ease-in-out infinite;
+}
+
+.conference-core__orb--2 {
+  right: 12%;
+  top: 18%;
+  transform: translateZ(52px);
+  animation: orbFloat 4.8s ease-in-out infinite .6s;
+}
+
+.conference-core__orb--3 {
+  left: 18%;
+  bottom: 20%;
+  transform: translateZ(40px);
+  animation: orbFloat 5.1s ease-in-out infinite 1.1s;
+}
+
+.conference-core__orb--4 {
+  right: 18%;
+  bottom: 24%;
+  transform: translateZ(44px);
+  animation: orbFloat 4.5s ease-in-out infinite .3s;
+}
+
+@keyframes orbFloat {
+
+  0%,
+  100% {
+    transform: translateZ(48px) translateY(0);
+  }
+
+  50% {
+    transform: translateZ(48px) translateY(-6px);
+  }
+}
+
+.conference-core__light {
+  position: absolute;
+  width: 52%;
+  height: 52%;
+  left: 14%;
+  top: 8%;
+  background: radial-gradient(circle, rgba(242, 239, 231, .26) 0%, rgba(176, 149, 99, .14) 32%, transparent 70%);
+  border-radius: 50%;
+  transform: translateZ(82px);
+  filter: blur(11px);
+  pointer-events: none;
+}
+
+.logi-acc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Audience constellation 3D lines */
+.audience-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(176, 149, 99, .28), transparent);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+/* Speaker card 3D tilt - JS driven */
+.speaker-card {
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  --depth: 0px;
+  transform:
+    perspective(1200px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) translateZ(var(--depth));
+  will-change: transform;
+}
+
+/* Final CTA core small */
+.conf-final__core .conference-core {
+  width: 320px;
+  left: 50%;
+  top: 50%;
+  opacity: 1;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, .5)) brightness(1.2);
+}
+
+#conf-three-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(-220px);
+  opacity: .58;
+  pointer-events: none;
+}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce) {
+
+  .conference-core__ring--outer,
+  .conference-core__ring--inner,
+  .conference-core__orb,
+  .conference-core {
+    animation: none !important;
+  }
+
+  .conference-core {
+    transform: translate3d(-50%, -50%, 0) !important;
+  }
+}

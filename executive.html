@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Executive Leadership Team — ICAN UK &amp; District Society</title>
+  <meta name="description"
+    content="Meet the official Executive Committee officers of ICAN UK & District Society. Chartered accountants leading professional standards, member welfare, and governance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <meta name="color-scheme" content="dark light" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="ICAN UK Logo" class="logo-img" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" title="Menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="executive.html" class="is-active" style="color:var(--green);font-weight:700">Executive Team</a>
+        <a href="index.html#history">History</a>
+        <a href="conference.html">Conference</a>
+        <a href="conference.html#agenda">Events</a>
+        <a href="index.html#members" class="btn btn--brass" style="padding:10px 18px">Member Portal</a>
+      </nav>
+
+      <div class="mobile-nav" id="mobileNav" aria-hidden="true" tabindex="-1">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="executive.html">Executive Team</a>
+        <a href="index.html#history">History</a>
+        <a href="conference.html">Conference</a>
+        <a href="conference.html#agenda">Events</a>
+        <a href="index.html#members" class="btn btn--brass">Member Portal</a>
+      </div>
+      <div class="nav-backdrop" id="navBackdrop" aria-hidden="true" tabindex="-1"></div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__content">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a> <span>/</span> <span>Governance</span> <span>/</span> <span>Executive Leadership</span>
+        </div>
+        <h1 class="page-title">EXECUTIVE LEADERSHIP TEAM</h1>
+        <p class="page-subtitle">
+          Dedicated stewards responsible for co-ordinating and controlling the affairs of ICAN UK &amp; District Society, regulating membership, and fostering professional excellence across the United Kingdom.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUB-NAV / PILL TABS -->
+  <nav class="page-nav-bar" aria-label="Executive filters">
+    <div class="container">
+      <div class="page-nav-bar__inner">
+        <button class="page-nav-pill is-active filter-btn" data-filter="all">All Officers (13)</button>
+        <button class="page-nav-pill filter-btn" data-filter="presidency">Presidency &amp; Chair</button>
+        <button class="page-nav-pill filter-btn" data-filter="secretariat">Secretariat</button>
+        <button class="page-nav-pill filter-btn" data-filter="finance">Finance &amp; Treasury</button>
+        <button class="page-nav-pill filter-btn" data-filter="operations">Technical &amp; Membership</button>
+        <button class="page-nav-pill filter-btn" data-filter="ex-officio">Ex-Officio</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="section" style="padding-top:48px;background:var(--bg)">
+    <div class="container">
+
+      <!-- LEADERSHIP PHILOSOPHY CARD (Source: ican-uk.org/executive) -->
+      <section class="content-box" style="margin-bottom:40px">
+        <div class="content-box__header">
+          <div>
+            <div class="content-box__kicker">Governance &amp; Accountability</div>
+            <h2 class="content-box__title">Our Leadership Philosophy</h2>
+          </div>
+          <span class="chip" style="color:var(--green);border-color:var(--green)">Elected Council</span>
+        </div>
+        <p style="font-size:1.05rem;line-height:1.7;color:var(--ink);max-width:82ch">
+          Our executive team brings together decades of rigorous industry experience across practice, corporate leadership, public finance, and academia with a forward-thinking approach to institutional stewardship. We believe in transparent leadership, ethical decision-making, and fostering a culture of innovation that empowers every member to excel.
+        </p>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px">
+          <span class="chip" style="background:var(--paper-warm);border-color:var(--brass);color:var(--ink)">🎯 Strategic Vision</span>
+          <span class="chip" style="background:var(--paper-warm);border-color:var(--green);color:var(--green)">🤝 Collaborative Culture</span>
+          <span class="chip" style="background:var(--paper-warm);border-color:var(--navy);color:var(--navy)">📈 Growth Focus</span>
+          <span class="chip" style="background:var(--paper-warm);border-color:var(--oxblood);color:var(--oxblood)">⚖️ Ethical Stewardship</span>
+          <span class="chip" style="background:var(--paper-warm);border-color:var(--border-medium);color:var(--muted)">🌐 Stakeholder Value</span>
+        </div>
+      </section>
+
+      <!-- EXECUTIVE MEMBERS GRID (Official 13 from ican-uk.org/executive) -->
+      <section>
+        <div class="exec-grid" id="execGrid">
+
+          <!-- 1. Chairman -->
+          <article class="exec-card" data-category="presidency">
+            <div class="exec-card__top"></div>
+            <div class="exec-card__photo-wrap">
+              <div class="exec-card__avatar">
+                <img src="images/executive/chairman.jpeg" alt="Akintayo Ojo FCA" loading="lazy" onerror="this.src='images/logo.jpg'" />
+              </div>
+            </div>
+            <div class="exec-card__info">
+              <div>
+                <h3 class="exec-card__name">Akintayo Ojo FCA</h3>
+                <div class="exec-card__role">District Chairman</div>
+                <span class="exec-card__badge">Fellow (FCA) • Board Chair</span>
+                <p class="exec-card__bio">
+                  Leads the District Society's executive strategy, national council representation, and external stakeholder diplomacy between the UK and ICAN National Secretariat.
+                </p>
+              </div>
+              <div class="exec-card__actions">
+                <span class="chip" style="font-size:0.75rem">Governance</span>
+                <span class="chip" style="font-size:0.75rem">Strategy</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Vice Chairman -->
+          <article class="exec-card" data-category="presidency">
+            <div class="exec-card__top"></div>
+            <div class="exec-card__photo-wrap">
+              <div class="exec-card__avatar">
+                <img src="images/executive/vice-chairman.jpeg" alt="Tayo Animashaun, FCA" loading="lazy" onerror="this.src='images/logo.jpg'" />
+              </div>
+            </div>
+            <div class="exec-card__info">
+              <div>
+                <h3 class="exec-card__name">Tayo Animashaun, FCA</h3>
+                <div class="exec-card__role">Vice Chairman</div>
+                <span class="exec-card__badge">Fellow (FCA) • Conference Lead</span>
+                <p class="exec-card__bio">
+                  Supports the Chairman in strategic initiatives and chairs the International Conference Committee, overseeing key stakeholder partnerships and signature programmes.
+                </p>
+              </div>
+              <div class="exec-card__actions">
+                <span class="chip" style="font-size:0.75rem">Conference</span>
+                <span class="chip" style="font-size:0.75rem">Partnerships</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Deputy Vice Chairman -->
+          <article class="exec-card" data-category="presidency">
+            <div class="exec-card__top"></div>
+            <div class="exec-card__photo-wrap">
+              <div class="exec-card__avatar">
+                <img src="images/executive/deputy-vice-chairman.jpeg" alt="Moses Peters, FCA" loading="lazy" onerror="this.src='images/logo.jpg'" />
+              </div>
+            </div>
+            <div class="exec-card__info">
+              <div>
+                <h3 class="exec-card__name">Moses Peters, FCA</h3>
+                <div class="exec-card__role">Deputy Vice Chairman</div>
+                <span class="exec-card__badge">Fellow (FCA) • Executive</span>
+                <p class="exec-card__bio">
+                  Drives operational synergy across district programmes and coordinates executive support for regional chapters outside London.
+                </p>
+              </div>
+              <div class="exec-card__actions">
+                <span class="chip" style="font-size:0.75rem">Operations</span>
+                <span class="chip" style="font-size:0.75rem">Regional Chapters</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. General Secretary -->
+          <article class="exec-card" data-category="secretariat">
+            <div class="exec-card__top"></div>
+            <div class="exec-card__photo-wrap">
+              <div class="exec-card__avatar">
+                <img src="images/executive/general-secretary.jpeg" alt="Olajumoke Sangojinmi, FCA" loading="lazy" onerror="this.src='images/logo.jpg'" />
+              </div>
+            </div>
+            <div class="exec-card__info">
+              <div>
+                <h3 class="exec-card__name">Olajumoke Sangojinmi, FCA</h3>
+                <div class="exec-card__role">General Secretary</div>
+                <span class="exec-card__badge">Fellow (FCA) • Head of Secretariat</span>
+                <p class="exec-card__bio">
+                  Custodian of all District records, statutory meeting minutes, member notices, and official secretariat correspondence with regulatory and professional bodies.
+                </p>
+              </div>
+              <div class="exec-card__actions">
+                <span class="chip" style="font-size:0.75rem">Secretariat</span>
+                <span class="chip" style="font-size:0.75rem">Statutory Records</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Assistant General Secretary -->
+          <article class="exec-card" data-category="secretariat">
+            <div class="exec-card__top"></div>
+            <div class="exec-card__photo-wrap">
+              <div class="exec-card__avatar">
+                <img src="images/executive/assistant-general-secretary.jpeg" alt="Obi Ifezue, ACA" loading="lazy" onerror="this.src='images/logo.jpg'" />
+              </div>
+            </div>
+            <div class="exec-card__info">
+              <div>
+                <h3 class="exec-card__name">Obi Ifezue, ACA</h3>
+                <div class="exec-card__role">Assistant General Secretary</div>
+                <span class="exec-card__badge">Associate (ACA) • Secretariat</span>
+                <p class="exec-card__bio">
+                  Assists in recording proceedings, coordinating meeting packs, managing AGM logistics, and communicating executive resolutions to the membership.
+                </p>
+              </div>
+              <div class="exec-card__actions">
+                <span class="chip" style="font-size:0.75rem">Meeting Packs</span>
+                <span class="chip" style="font-size:0.75rem">Communications</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Treasurer -->
+          <article class="exec-card" data-category="finance">
+            <div class="exec-card__top"></div>
+            <div class="exec-card__photo-wrap">
+              <div class="exec-card__avatar">
+                <img src="images/executive/treasurer.jpeg" alt="Iredele Oyedele, FCA" loading="lazy" onerror="this.src='images/logo.jpg'" />
+              </div>
+            </div>
+            <div class="exec-card__info">
+              <div>
+                <h3 class="exec-card__name">Iredele Oyedele, FCA</h3>
+                <div class="exec-card__role">Treasurer</div>
+                <span class="exec-card__badge">Fellow (FCA) • Financial Custodian</span>
+                <p class="exec-card__bio">
+                  Oversees treasury management, bank accounts, funds disbursements, statutory financial reporting, and compliance with UK accounting standards.
+                </p>
+              </div>
+              <div class="exec-card__actions">
+                <span class="chip" style="font-size:0.75rem">Treasury</span>
+                <span class="chip" style="font-size:0.75rem">Stewardship</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Financial Secretary -->
+          <article class="exec-card" data-category="finance">
+            <div class="exec-card__top"></div>
+            <div class="exec-card__photo-wrap">
+              <div class="exec-card__avatar">
+                <img src="images/executive/financial-secretary.jpeg" alt="Vivian Okolie, FCA" loading="lazy" onerror="this.src='images/logo.jpg'" />
+              </div>
+            </div>
+            <div class="exec-card__info">
+              <div>
+                <h3 class="exec-card__name">Vivian Okolie, FCA</h3>
+                <div class="exec-card__role">Financial Secretary</div>
+                <span class="exec-card__badge">Fellow (FCA) • Dues &amp; Revenue</span>
+                <p class="exec-card__bio">
+                  Manages member subscriptions, dues collection, revenue tracking for conferences and workshops, and maintains the financial register of members in good standing.
+                </p>
+              </div>
+              <div class="exec-card__actions">
+                <span class="chip" style="font-size:0.75rem">Subscriptions</span>
+                <span class="chip" style="font-size:0.75rem">Financial Records</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Technical Secretary -->
+          <article class="exec-card" data-category="operations">
+            <div class="exec-card__top"></div>
+            <div class="exec-card__photo-wrap">
+              <div class="exec-card__avatar">
+                <img src="images/executive/technical-secretary.jpeg" alt="Samuel Olayioye, FCA" loading="lazy" onerror="this.src='images/logo.jpg'" />
+              </div>
+            </div>
+            <div class="exec-card__info">
+              <div>
+                <h3 class="exec-card__name">Samuel Olayioye, FCA</h3>
+                <div class="exec-card__role">Technical Secretary</div>
+                <span class="exec-card__badge">Fellow (FCA) • CPD &amp; Standards</span>
+                <p class="exec-card__bio">
+                  Chairs technical sessions, organizes accredited CPD masterclasses, and leads professional standards alignment with UK CCAB bodies and ICAN National Council.
+                </p>
+              </div>
+              <div class="exec-card__actions">
+                <span class="chip" style="font-size:0.75rem">CPD Masterclasses</span>
+                <span class="chip" style="font-size:0.75rem">Technical Papers</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9. Membership Secretary -->
+          <article class="exec-card" data-category="operations">
+            <div class="exec-card__top"></div>
+            <div class="exec-card__photo-wrap">
+              <div class="exec-card__avatar">
+                <img src="images/executive/membership-secretary.jpeg" alt="Ifeoma Okafor, FCA" loading="lazy" onerror="this.src='images/logo.jpg'" />
+              </div>
+            </div>
+            <div class="exec-card__info">
+              <div>
+                <h3 class="exec-card__name">Ifeoma Okafor, FCA</h3>
+                <div class="exec-card__role">Membership Secretary</div>
+                <span class="exec-card__badge">Fellow (FCA) • Admissions &amp; Regions</span>
+                <p class="exec-card__bio">
+                  Safeguards the membership database, welcomes newly arrived chartered accountants into the UK, processes admissions, and coordinates student support.
+                </p>
+              </div>
+              <div class="exec-card__actions">
+                <span class="chip" style="font-size:0.75rem">Member Database</span>
+                <span class="chip" style="font-size:0.75rem">Admissions</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10. Social Secretary -->
+          <article class="exec-card" data-category="operations">
+            <div class="exec-card__top"></div>
+            <div class="exec-card__photo-wrap">
+              <div class="exec-card__avatar">
+                <img src="images/executive/social-secretary.jpeg" alt="Deborah O. Suleiman, ACA" loading="lazy" onerror="this.src='images/logo.jpg'" />
+              </div>
+            </div>
+            <div class="exec-card__info">
+              <div>
+                <h3 class="exec-card__name">Deborah O. Suleiman, ACA</h3>
+                <div class="exec-card__role">Social Secretary</div>
+                <span class="exec-card__badge">Associate (ACA) • Events &amp; Welfare</span>
+                <p class="exec-card__bio">
+                  Directs social cohesion, Annual Dinner &amp; Dance arrangements, cultural gatherings, and member networking engagements across the United Kingdom.
+                </p>
+              </div>
+              <div class="exec-card__actions">
+                <span class="chip" style="font-size:0.75rem">Annual Dinner</span>
+                <span class="chip" style="font-size:0.75rem">Community</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 11. Ex-Officio 1 -->
+          <article class="exec-card" data-category="ex-officio">
+            <div class="exec-card__top"></div>
+            <div class="exec-card__photo-wrap">
+              <div class="exec-card__avatar">
+                <img src="images/executive/ex-officio-1.jpeg" alt="Seyi Bamisaye, FCA" loading="lazy" onerror="this.src='images/logo.jpg'" />
+              </div>
+            </div>
+            <div class="exec-card__info">
+              <div>
+                <h3 class="exec-card__name">Seyi Bamisaye, FCA</h3>
+                <div class="exec-card__role">Ex-Officio 1</div>
+                <span class="exec-card__badge">Fellow (FCA) • CCAB Liaison</span>
+                <p class="exec-card__bio">
+                  Serves as senior advisor to the Executive Committee and leads liaison with UK CCAB member bodies (ICAEW, ACCA, ICAS, CIPFA).
+                </p>
+              </div>
+              <div class="exec-card__actions">
+                <span class="chip" style="font-size:0.75rem">Advisory</span>
+                <span class="chip" style="font-size:0.75rem">CCAB Relations</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 12. Ex-Officio 2 -->
+          <article class="exec-card" data-category="ex-officio">
+            <div class="exec-card__top"></div>
+            <div class="exec-card__photo-wrap">
+              <div class="exec-card__avatar">
+                <img src="images/executive/ex-officio-2.jpeg" alt="Olawunmi Hassan, FCA" loading="lazy" onerror="this.src='images/logo.jpg'" />
+              </div>
+            </div>
+            <div class="exec-card__info">
+              <div>
+                <h3 class="exec-card__name">Olawunmi Hassan, FCA</h3>
+                <div class="exec-card__role">Ex-Officio 2</div>
+                <span class="exec-card__badge">Fellow (FCA) • Advisory</span>
+                <p class="exec-card__bio">
+                  Provides strategic institutional guidance, continuity in governance, and mentorship support for standing committee leads.
+                </p>
+              </div>
+              <div class="exec-card__actions">
+                <span class="chip" style="font-size:0.75rem">Governance</span>
+                <span class="chip" style="font-size:0.75rem">Mentorship</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 13. Ex-Officio 3 / Immediate Past Chair -->
+          <article class="exec-card" data-category="ex-officio">
+            <div class="exec-card__top"></div>
+            <div class="exec-card__photo-wrap">
+              <div class="exec-card__avatar">
+                <img src="images/executive/ex-officio-3.jpeg" alt="Marian Adekoya, FCA" loading="lazy" onerror="this.src='images/logo.jpg'" />
+              </div>
+            </div>
+            <div class="exec-card__info">
+              <div>
+                <h3 class="exec-card__name">Marian Adekoya, FCA</h3>
+                <div class="exec-card__role">Ex-Officio 3 / Immediate Past Chair</div>
+                <span class="exec-card__badge">Fellow (FCA) • Past Chair</span>
+                <p class="exec-card__bio">
+                  Provides high-level institutional memory, transition guidance from preceding tenures, and chairs high-level consultative meetings with Council elders.
+                </p>
+              </div>
+              <div class="exec-card__actions">
+                <span class="chip" style="font-size:0.75rem">Past Chair</span>
+                <span class="chip" style="font-size:0.75rem">Elders Council</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- GOVERNANCE SUB-SECTIONS (Committees & Past Chairs overview) -->
+      <section class="content-box" style="margin-top:50px">
+        <div class="content-box__header">
+          <div>
+            <div class="content-box__kicker">Governance Architecture</div>
+            <h2 class="content-box__title">Committees &amp; Advisory Bodies</h2>
+          </div>
+          <span class="chip">District Structure</span>
+        </div>
+
+        <p style="color:var(--muted);line-height:1.6;margin-bottom:24px">
+          The Executive Committee is supported by specialized standing committees appointed to execute specific portfolios:
+        </p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+          <div style="background:var(--paper-warm);padding:18px;border-radius:var(--radius-sm);border:1px solid var(--border-light)">
+            <strong style="color:var(--ink)">Finance Committee</strong>
+            <p style="font-size:0.85rem;color:var(--muted);margin-top:6px">Ensures strict financial control and facilitates sustainable revenue generation.</p>
+          </div>
+          <div style="background:var(--paper-warm);padding:18px;border-radius:var(--radius-sm);border:1px solid var(--border-light)">
+            <strong style="color:var(--ink)">Media &amp; Communications</strong>
+            <p style="font-size:0.85rem;color:var(--muted);margin-top:6px">Delivers digital, web, social, email, and publication channels for the District.</p>
+          </div>
+          <div style="background:var(--paper-warm);padding:18px;border-radius:var(--radius-sm);border:1px solid var(--border-light)">
+            <strong style="color:var(--ink)">Membership &amp; Regions</strong>
+            <p style="font-size:0.85rem;color:var(--muted);margin-top:6px">Manages membership records and coordinates chapters in the Midlands, North West &amp; Scotland.</p>
+          </div>
+          <div style="background:var(--paper-warm);padding:18px;border-radius:var(--radius-sm);border:1px solid var(--border-light)">
+            <strong style="color:var(--ink)">Benevolent Fund &amp; Welfare</strong>
+            <p style="font-size:0.85rem;color:var(--muted);margin-top:6px">Established in 2014 to safeguard member wellbeing, family emergency aid, and benevolence.</p>
+          </div>
+          <div style="background:var(--paper-warm);padding:18px;border-radius:var(--radius-sm);border:1px solid var(--border-light)">
+            <strong style="color:var(--ink)">Past Chairs &amp; Patrons</strong>
+            <p style="font-size:0.85rem;color:var(--muted);margin-top:6px">Advisory body consisting of all past Chairmen since 1990 providing wisdom and counsel.</p>
+          </div>
+          <div style="background:var(--paper-warm);padding:18px;border-radius:var(--radius-sm);border:1px solid var(--border-light)">
+            <strong style="color:var(--ink)">Conference Planning</strong>
+            <p style="font-size:0.85rem;color:var(--muted);margin-top:6px">Plans and executes the flagship Annual UK International Accountants' Conference.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:40px">
+        <div>
+          <div class="logo"><span class="logo__top" style="color:var(--white)">ICAN UK</span><span
+              class="logo__bottom">DISTRICT SOCIETY</span></div>
+          <p style="margin-top:14px;max-width:36ch;line-height:1.6">A not-for-profit district society of the Institute
+            of Chartered Accountants of Nigeria, registered in the United Kingdom. Building professional excellence
+            since 1988.</p>
+        </div>
+        <div>
+          <div class="mono">Navigation</div>
+          <div style="margin-top:14px;display:grid;gap:8px;font-size:.9rem">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="executive.html">Executive Team</a>
+            <a href="index.html#history">History</a>
+            <a href="conference.html">Conference</a>
+            <a href="conference.html#agenda">Events</a>
+          </div>
+        </div>
+        <div>
+          <div class="mono">Official Secretariat</div>
+          <div style="margin-top:14px;font-size:.9rem;line-height:1.6">
+            Coker Isah &amp; Coker; 74 Church Road<br />Crystal Palace, London. SE19 2EZ<br />
+            generalsecretary@ican-uk.org<br />
+            +44 7535 230 605, +44 7894 069 959
+          </div>
+          <div style="margin-top:18px;display:flex;gap:10px">
+            <span class="chip">LinkedIn</span>
+            <span class="chip">X</span>
+          </div>
+        </div>
+      </div>
+      <div
+        style="margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem">
+        <span>© 2026 ICAN UK &amp; District Society. All rights reserved.</span>
+        <span>Built with official records from ican-uk.org</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const navBackdrop = document.getElementById('navBackdrop');
+
+    if(navToggle && mobileNav && navBackdrop) {
+      function toggleNav() {
+        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isOpen);
+        mobileNav.setAttribute('aria-hidden', isOpen);
+        mobileNav.classList.toggle('is-open', !isOpen);
+        navBackdrop.classList.toggle('is-open', !isOpen);
+      }
+      navToggle.addEventListener('click', toggleNav);
+      navBackdrop.addEventListener('click', toggleNav);
+    }
+
+    // Category filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.exec-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const f = btn.dataset.filter;
+
+        cards.forEach(card => {
+          if(f === 'all' || card.dataset.category === f) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/feedback-widget.js"></script>
+  <script src="js/chatbot-widget.js"></script>
+</body>
+</html>

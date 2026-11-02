@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accessibility Statement &amp; WCAG 2.2 Compliance — ICAN UK &amp; District Society</title>
+  <meta name="description"
+    content="Official accessibility statement and WCAG 2.2 Level AA compliance commitment for ICAN UK & District Society digital platform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <meta name="color-scheme" content="dark light" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="ICAN UK Logo" class="logo-img" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" title="Menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="district-structure.html">District Structure</a>
+        <a href="committees.html">Committees</a>
+        <a href="executive.html">Executive Team</a>
+        <a href="publications.html">Publications</a>
+        <a href="accessibility.html" class="is-active" style="color:var(--green);font-weight:700">Accessibility</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="conference.html">Conference</a>
+      </nav>
+
+      <div class="mobile-nav" id="mobileNav" aria-hidden="true" tabindex="-1">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="district-structure.html">District Structure</a>
+        <a href="committees.html">Committees</a>
+        <a href="executive.html">Executive Team</a>
+        <a href="publications.html">Publications</a>
+        <a href="accessibility.html">Accessibility</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="conference.html">Conference</a>
+      </div>
+      <div class="nav-backdrop" id="navBackdrop" aria-hidden="true" tabindex="-1"></div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__content">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a> <span>/</span> <span>Compliance</span> <span>/</span> <span>Accessibility</span>
+        </div>
+        <h1 class="page-title">ACCESSIBILITY STATEMENT</h1>
+        <p class="page-subtitle">
+          Our commitment to ensuring the ICAN UK &amp; District Society digital platform is fully accessible, inclusive, and compliant with Web Content Accessibility Guidelines (WCAG) 2.2 Level AA.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main class="section" style="padding-top:48px;background:var(--bg)">
+    <div class="container">
+
+      <section class="content-box">
+        <div class="content-box__header">
+          <div>
+            <div class="content-box__kicker">Deliverable #20 &amp; #29 • Universal Access</div>
+            <h2 class="content-box__title">Conformance Status &amp; Standards</h2>
+          </div>
+          <span class="chip" style="color:var(--green);border-color:var(--green)">WCAG 2.2 Level AA</span>
+        </div>
+
+        <p style="font-size:1.05rem;line-height:1.7;color:var(--ink);max-width:80ch;margin-bottom:24px">
+          The Institute of Chartered Accountants of Nigeria (UK &amp; District Society) is dedicated to providing an accessible experience for all visitors, including persons with visual, auditory, cognitive, or motor impairments. We strive to meet and exceed <strong>Web Content Accessibility Guidelines (WCAG) 2.2 Level AA</strong> conformance.
+        </p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:28px">
+          
+          <div style="background:var(--paper-warm);padding:24px;border-radius:var(--radius-sm)">
+            <h3 style="font-size:1.15rem;color:var(--ink);margin-bottom:8px">1. Perceivable</h3>
+            <p style="font-size:0.88rem;color:var(--muted);line-height:1.6">
+              All non-text content possesses descriptive alternative text (<code style="font-size:0.8rem">alt</code> attributes). High color contrast ratios (minimum 4.5:1 for normal text) ensure readable typography across desktop and mobile.
+            </p>
+          </div>
+
+          <div style="background:var(--paper-warm);padding:24px;border-radius:var(--radius-sm)">
+            <h3 style="font-size:1.15rem;color:var(--ink);margin-bottom:8px">2. Operable</h3>
+            <p style="font-size:0.88rem;color:var(--muted);line-height:1.6">
+              All website functionality, form fields, and navigation elements are fully operable via standard keyboard interface without keyboard traps. Visible focus rings guide keyboard navigators.
+            </p>
+          </div>
+
+          <div style="background:var(--paper-warm);padding:24px;border-radius:var(--radius-sm)">
+            <h3 style="font-size:1.15rem;color:var(--ink);margin-bottom:8px">3. Understandable</h3>
+            <p style="font-size:0.88rem;color:var(--muted);line-height:1.6">
+              Clear headings, intuitive semantic HTML landmarks (<code style="font-size:0.8rem">&lt;header&gt;</code>, <code style="font-size:0.8rem">&lt;nav&gt;</code>, <code style="font-size:0.8rem">&lt;main&gt;</code>, <code style="font-size:0.8rem">&lt;footer&gt;</code>), and descriptive error notifications ensure straightforward interaction.
+            </p>
+          </div>
+
+          <div style="background:var(--paper-warm);padding:24px;border-radius:var(--radius-sm)">
+            <h3 style="font-size:1.15rem;color:var(--ink);margin-bottom:8px">4. Robust</h3>
+            <p style="font-size:0.88rem;color:var(--muted);line-height:1.6">
+              Built on modern W3C standards with ARIA roles to ensure compatibility with screen readers (NVDA, JAWS, VoiceOver), speech recognition tools, and browser zoom engines up to 200%.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- FEEDBACK & CONTACT FOR ACCESSIBILITY -->
+      <section class="content-box" style="margin-top:36px">
+        <div class="content-box__header">
+          <div>
+            <div class="content-box__kicker">Support</div>
+            <h2 class="content-box__title">Feedback &amp; Accessibility Inquiries</h2>
+          </div>
+          <span class="chip">Continuous Improvement</span>
+        </div>
+
+        <p style="color:var(--muted);line-height:1.6;max-width:80ch">
+          If you encounter any accessibility barriers on this website or require documents in an alternative format (large print, audio, or accessible PDF), please contact our Secretariat:
+        </p>
+
+        <div style="margin-top:20px;display:flex;gap:16px;flex-wrap:wrap">
+          <a href="contact.html" class="btn btn--brass">Contact Secretariat →</a>
+          <span style="font-size:0.88rem;color:var(--muted);align-self:center">Email: generalsecretary@ican-uk.org • Phone: +44 7535 230 605</span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:40px">
+        <div>
+          <div class="logo"><span class="logo__top" style="color:var(--white)">ICAN UK</span><span
+              class="logo__bottom">DISTRICT SOCIETY</span></div>
+          <p style="margin-top:14px;max-width:36ch;line-height:1.6">A not-for-profit district society of the Institute
+            of Chartered Accountants of Nigeria, registered in the United Kingdom. Building professional excellence
+            since 1988.</p>
+        </div>
+        <div>
+          <div class="mono">Navigation</div>
+          <div style="margin-top:14px;display:grid;gap:8px;font-size:.9rem">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="district-structure.html">District Structure</a>
+            <a href="committees.html">Committees</a>
+            <a href="executive.html">Executive Team</a>
+            <a href="accessibility.html">Accessibility</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div>
+          <div class="mono">Official Secretariat</div>
+          <div style="margin-top:14px;font-size:.9rem;line-height:1.6">
+            Coker Isah &amp; Coker; 74 Church Road<br />Crystal Palace, London. SE19 2EZ<br />
+            generalsecretary@ican-uk.org<br />
+            +44 7535 230 605, +44 7894 069 959
+          </div>
+          <div style="margin-top:18px;display:flex;gap:10px">
+            <span class="chip">LinkedIn</span>
+            <span class="chip">X</span>
+          </div>
+        </div>
+      </div>
+      <div
+        style="margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;flex-wrap:gap:12px;font-size:.78rem">
+        <span>© 2026 ICAN UK &amp; District Society. All rights reserved.</span>
+        <span>Built with official records from ican-uk.org</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const navBackdrop = document.getElementById('navBackdrop');
+
+    if(navToggle && mobileNav && navBackdrop) {
+      function toggleNav() {
+        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isOpen);
+        mobileNav.setAttribute('aria-hidden', isOpen);
+        mobileNav.classList.toggle('is-open', !isOpen);
+        navBackdrop.classList.toggle('is-open', !isOpen);
+      }
+      navToggle.addEventListener('click', toggleNav);
+      navBackdrop.addEventListener('click', toggleNav);
+    }
+  </script>
+
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/feedback-widget.js"></script>
+  <script src="js/chatbot-widget.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* base.css - BRIGHT USER-FRIENDLY */
+html {
+  scroll-behavior: smooth;
+  background: var(--paper-warm);
+  color: var(--ink)
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper-warm);
+  overflow-x: hidden;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: .95;
+  color: var(--ink)
+}
+
+.mono {
+  font-family: 'Inter', monospace;
+  font-size: .75rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--brass)
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .7rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--green);
+  border: 1px solid rgba(36, 78, 59, .18);
+  padding: 6px 12px;
+  border-radius: 100px;
+  background: rgba(36, 78, 59, .06)
+}
+
+
+.section-label div {
+  margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* .section-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brass);
+  box-shadow: 0 0 8px var(--brass)
+} */
+
+.ivory {
+  color: var(--ink);
+  background: var(--ivory)
+}
+
+.ink {
+  color: var(--ink);
+  background: var(--paper-warm)
+}
+
+.section.ink {
+  background: var(--paper-warm)
+}
+
+.section.ink:nth-of-type(even) {
+  background: var(--white)
+}
+
+::selection {
+  background: var(--brass);
+  color: var(--ink)
+}
+
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px
+}
+/* MAC FIX: Ensure body always visible */
+body { opacity: 1 !important; visibility: visible !important; }
